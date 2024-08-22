@@ -1,9 +1,7 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiEye } from "react-icons/fi";
-import { LuPencil } from "react-icons/lu";
-import { RiDeleteBinLine } from "react-icons/ri";
 import UserItem from "./UserItem";
+import PaginationTable from "../../../components/PaginationTable";
 
 export default function UserTable() {
   return (
@@ -31,6 +29,7 @@ export default function UserTable() {
               <UserItem id={8} name="Janibek Maxatov" tel="+99699 807 01 16" role="Курьер" />
             </tbody>
           </table>
+          <PaginationTable />
         </div>
       </div>
     </section>
