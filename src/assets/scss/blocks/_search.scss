@@ -3,6 +3,7 @@
   height: 96px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 24px;
   background: $white;
   padding: 0px 24px;
@@ -28,17 +29,22 @@
         font-size: 26px;
         margin-left: 5px;
         border-radius: 20px;
+        color: $gray_light;
       }
 
       input {
-        width: 80%;
-        padding: 10px 10px;
+        width: 100%;
         outline: none;
         margin: 0 auto;
+
+        &::placeholder {
+          color: $gray_light;
+        }
       }
     }
 
     button {
+      width: auto;
       padding: 12px 16px;
       color: $black_light;
       font-family: $golos_fonts;
@@ -61,6 +67,7 @@
 
   .search__right {
     .add__btn {
+      width: auto;
       display: flex;
       align-items: center;
       gap: 8px;
