@@ -1,12 +1,14 @@
-import React from 'react';
-import Header from '../../../components/Header';
-import UserTable from './UserTable';
+import React from "react";
+import Header from "../../../components/Header";
+import UserTable from "./UserTable";
+import Search from "../../../components/Search"
 
 export default function User() {
-    return (
-        <>
-            <Header text="Пользователи" />
-            <UserTable/>
-        </>
-    )
+  return (
+    <>
+      <Header text="Пользователи" />
+      <Search />
+      <UserTable />
+    </>
+  );
 }

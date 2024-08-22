@@ -28,7 +28,7 @@
 
         .table_btn_cahnge {
             background: #FFF8EE;
-            color: #FFB84D;
+            color: $orang;
         }
 
         .table_btn_delete {
@@ -45,7 +45,7 @@
                 height: 40px;
                 display: flex;
                 align-items: center;
-                background-color: #ffb84d;
+                background-color: $orang;
                 border-radius: 8px;
                 padding: 0 16px;
 
