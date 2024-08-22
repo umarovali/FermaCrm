@@ -2,6 +2,7 @@ import React from "react";
 import { GoSearch } from "react-icons/go";
 import toggle from "../assets/icons/toggle.svg";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { CardActionArea } from '@mui/material';
 
 export default function Search() {
   return (
@@ -13,17 +14,17 @@ export default function Search() {
               <GoSearch className="search__icon" />
               <input type="text" />
             </div>
-            <button>
+            <CardActionArea>
               <img src={toggle} alt="icon" />
               Фильтр
-            </button>
+            </CardActionArea>
           </div>
 
           <div className="search__right">
-            <button className="add__btn">
+            <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
               Добавить
-            </button>
+            </CardActionArea>
           </div>
         </div>
       </div>
