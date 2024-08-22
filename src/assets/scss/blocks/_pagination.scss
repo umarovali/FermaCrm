@@ -1,0 +1,55 @@
+.pagination_table {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  
+    .pagination_all {
+      color: $black_light; // Replace black_light with an actual color
+      font-family: $golos_fonts;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  
+    .MuiPagination-root {
+      display: flex;
+      align-items: center;
+    }
+  
+    .MuiPaginationItem-root {
+      color: $black_light;
+      font-weight: 500;
+      border: 1px solid #E6E6E6; 
+      border-radius: 8px; 
+
+      &:hover {
+        background-color: #FFF8EE; 
+        border-color: #FFEACA;
+        color: #FFB84D;
+      }
+  
+      &.Mui-selected {
+        color:#FFB84D; 
+        background-color: $white; 
+        border: 1px solid #FFB84D;
+        
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+  
+    .MuiPaginationItem-ellipsis {
+      color: #E6E6E6; 
+      border: none;  
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 33px;
+      margin-top: -10px;
+    }
+  
+    .MuiPaginationItem-previousNext {
+      border-radius: 8px; 
+    }
+  }
+  
