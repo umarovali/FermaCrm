@@ -1,0 +1,122 @@
+.usertable {
+    width: 100%;
+    border-radius: 24px;
+    background: $white;
+    box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+    padding: 24px;
+    margin-top: 24px;
+
+    .user_table {
+        width: 100%;
+
+        .table_btn_eye,
+        .table_btn_cahnge,
+        .table_btn_delete {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 19px;
+        }
+
+        .table_btn_eye {
+            background: #E6EEF8;
+            color: #3376C7;
+        }
+
+        .table_btn_cahnge {
+            background: #FFF8EE;
+            color: #FFB84D;
+        }
+
+        .table_btn_delete {
+            background: #FFE6E6;
+            color: #FF0000;
+        }
+
+
+        thead {
+            width: 100%;
+
+            tr {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                background-color: #ffb84d;
+                border-radius: 8px;
+                padding: 0 16px;
+
+                th {
+                    color: $black;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: $golos_fonts;
+                    width: 100%;
+                    text-align: left;
+                    font-weight: 400;
+                    font-size: 16px;
+
+                    .th_icon {
+                        font-size: 19px;
+                    }
+
+                    &:nth-child(1) {
+                        max-width: 48px;
+                    }
+
+                    &:nth-child(5) {
+                        max-width: 100px;
+                    }
+
+                }
+            }
+        }
+
+        tbody {
+            width: 100%;
+
+            tr {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                background-color: transparent;
+                padding: 0 16px;
+                border-bottom: 1px solid #E5E5E5;
+
+
+                td {
+                    color: $black;
+                    font-family: $golos_fonts;
+                    width: 100%;
+                    text-align: left;
+                    font-weight: 400;
+                    font-size: 16px;
+
+                    &:nth-child(1) {
+                        max-width: 48px;
+                    }
+
+                    &:nth-child(5) {
+                        max-width: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+
+                        .action-btn {
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

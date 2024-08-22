@@ -1,0 +1,104 @@
+.header {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    align-items: center;
+
+    .header_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header_title {
+        color: $gray;
+        font-family: $golos_fonts;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .header_language_profil {
+        display: flex;
+        gap: 16px;
+    }
+
+    .header_language {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 48px;
+        padding: 4px;
+        border-radius: 40px;
+        background: $white;
+        box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+
+        .header_language_name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .language_icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            .language_name {
+                color: $black;
+                font-family: $golos_fonts;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+            }
+        }
+
+        .header_language_arrow {
+            color: $gray_light;
+            font-size: 20px;
+            margin: 0px 6px;
+        }
+    }
+
+    .header_profil {
+        height: 46px;
+        padding: 4px;
+        border-radius: 40px;
+        background: #FFF;
+        box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 48px;
+
+        .header_profil_avatar_name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .header_profil_avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            .profil_name {
+                color: $black;
+                font-family: $golos_fonts;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .profil_jobtitle {
+                color: #999;
+                font-family: $golos_fonts;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+
+        .header_profil_arrow {
+            color: $gray_light;
+            font-size: 20px;
+            margin: 0px 6px;
+        }
+    }
+}
