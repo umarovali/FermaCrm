@@ -14,7 +14,7 @@ export default function Sidebar() {
             <p className='sidebar_menu'>menu</p>
 
             <ul className='sidebar_list'>
-                <SidebarItem link="/" Icon={HiOutlineBuildingOffice2} text={"Пользователи"} />
+                <SidebarItem link="/user" Icon={HiOutlineBuildingOffice2} text={"Пользователи"} />
                 <SidebarItem link="/products" Icon={IoSettingsOutline} text={"Продукты"} />
                 <SidebarItem link="/clients" Icon={IoSettingsOutline} text={"Клиенты"} />
                 <SidebarItem link="/couriers" Icon={IoSettingsOutline} text={"Курьеры"} />

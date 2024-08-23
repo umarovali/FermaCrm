@@ -7,7 +7,7 @@ import OrdersPage from "../modules/Orders/OrdersPage";
 export const routes = [
     {
         id: 1,
-        path: "/",
+        path: "/user/*",
         element: <UsersPage />
     },
     {
