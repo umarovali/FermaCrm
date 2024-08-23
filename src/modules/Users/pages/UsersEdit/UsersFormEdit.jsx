@@ -7,7 +7,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
 import User from "../../../../assets/images/user.svg"; 
 
-export default function UserForm() {
+export default function UsersFormEdit() {
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function UserForm() {
             </button>
             <button className="user__form__btn2">
               <img src={Add} alt="add icon" />
-              Добавить и сохранить
+              Изменить и сохранить
             </button>
           </div>
           <form>

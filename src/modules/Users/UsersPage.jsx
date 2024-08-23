@@ -1,13 +1,17 @@
-import React from 'react'
-import User from './components/User'
-import { Route, Routes } from 'react-router-dom'
-import UserAdd from './pages/UsersAdd/UsersAdd'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import User from "./components/User";
+import UserAdd from "./pages/UsersAdd/UsersAdd";
+import UsersEdit from "./pages/UsersEdit/UsersEdit";
+import Look from "./pages/Look/Look";
 
 export default function UsersPage() {
-    return (
-        <Routes>
-            <Route path='/' element={<User />} />
-            <Route path='/user_add' element={<UserAdd />} />
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route path="/" element={<User />} />
+      <Route path="/user_add" element={<UserAdd />} />
+      <Route path="/user_edit" element={<UsersEdit />} />
+      <Route path="/user_look" element={<Look />} />
+    </Routes>
+  );
 }

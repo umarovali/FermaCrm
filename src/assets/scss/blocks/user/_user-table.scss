@@ -11,7 +11,6 @@
     width: 100%;
 
     .table_btn_eye,
-    .table_btn_cahnge,
     .table_btn_delete {
       width: 28px;
       height: 28px;
@@ -27,9 +26,18 @@
       color: $blue;
     }
 
-    .table_btn_cahnge {
-      background: #fff8ee;
-      color: $orang;
+    a {
+      .table_btn_cahnge {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 19px;
+        background: #fff8ee;
+        color: $orang;
+      }
     }
 
     .table_btn_delete {

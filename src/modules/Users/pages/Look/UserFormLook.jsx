@@ -2,25 +2,12 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // icons
 import { FaArrowLeftLong } from "react-icons/fa6";
-import Add from "../../../../assets/icons/add.svg";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
 import User from "../../../../assets/images/user.svg"; 
 
-export default function UserForm() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
+export default function UserFormLook() {
   const navigate = useNavigate();
-
-  const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setSelectedImage(URL.createObjectURL(e.target.files[0]));
-    }
-  };
-
-  const handleImageClick = () => {
-    fileInputRef.current.click(); 
-  };
 
   return (
     <section>
@@ -31,28 +18,16 @@ export default function UserForm() {
               <FaArrowLeftLong />
               Назад
             </button>
-            <button className="user__form__btn2">
-              <img src={Add} alt="add icon" />
-              Добавить и сохранить
-            </button>
           </div>
           <form>
             <div className="user__form__wrapper">
               <div className="user__form__left">
                 <img 
-                  src={selectedImage || User} 
+                  src={User} 
                   alt="user" 
-                  onClick={handleImageClick} 
                   style={{ cursor: "pointer" }}
                 />
-                <input
-                  type="file"
-                  accept="image/*"
-                  ref={fileInputRef}
-                  onChange={handleImageChange}
-                  style={{ display: "none" }} 
-                />
-                <h4 onClick={handleImageClick} style={{ cursor: "pointer" }}>Изменить</h4>
+                <h4 style={{ cursor: "pointer" }}>Изменить</h4>
               </div>
               <div className="user__form__right">
                 <div className="user__form__right-top">
