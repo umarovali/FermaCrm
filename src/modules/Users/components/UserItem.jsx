@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiEye } from "react-icons/fi";
 import { LuPencil } from "react-icons/lu";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { CardActionArea} from "@mui/material";
+import { CardActionArea, Modal, Box } from "@mui/material";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
 export default function UserItem({ id, name, tel, role }) {
