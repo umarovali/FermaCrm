@@ -1,0 +1,31 @@
+import React from 'react';
+import { IoIosArrowDown } from "react-icons/io";
+import ProductItem from './ProductItem';
+
+export default function ProductTable() {
+    return (
+        <section>
+            <div className="container">
+                <div className="usertable">
+                    <table className="user_table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Наименование<IoIosArrowDown className="th_icon" /></th>
+                                <th>Количество<IoIosArrowDown className="th_icon" /></th>
+                                <th>Цена (сом)<IoIosArrowDown className="th_icon" /></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ProductItem id={1} name="С1" quantity="10 000" price="3 500" />
+                            <ProductItem id={2} name="С2" quantity="10 000" price="4 500" />
+                            <ProductItem id={3} name="С3" quantity="10 000" price="5 500" />
+                            <ProductItem id={4} name="С4" quantity="10 000" price="6 500" />
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    )
+}

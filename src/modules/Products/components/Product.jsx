@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from '../../../components/Header'
-import Search from '../../../components/Search'
+import { SearchProduct } from "../../../components/Search"
+import ProductTable from './ProductTable'
 
 export default function Product() {
     return (
         <>
             <Header text="Продукты" />
-            <Search />
+            <SearchProduct />
+            <ProductTable />
         </>
     )
 }
