@@ -5,7 +5,7 @@
   margin-top: 24px;
 
   .pagination_all {
-    color: $black_light; // Replace black_light with an actual color
+    color: $black_light;
     font-family: $golos_fonts;
     font-size: 14px;
     font-style: normal;
@@ -20,19 +20,19 @@
   .MuiPaginationItem-root {
     color: $black_light;
     font-weight: 500;
-    border: 1px solid #E6E6E6;
+    border: 1px solid $white_dark;
     border-radius: 8px;
 
     &:hover {
       background-color: #FFF8EE;
       border-color: #FFEACA;
-      color: #FFB84D;
+      color: $orang;
     }
 
     &.Mui-selected {
-      color: #FFB84D;
+      color: $orang;
       background-color: $white;
-      border: 1px solid #FFB84D;
+      border: 1px solid $orang;
 
       &:hover {
         background: transparent;
@@ -41,7 +41,7 @@
   }
 
   .MuiPaginationItem-ellipsis {
-    color: #E6E6E6;
+    color: $white_dark;
     border: none;
     font-family: 'Courier New', Courier, monospace;
     font-size: 33px;
@@ -49,7 +49,7 @@
 
     &:hover {
       background: transparent;
-      color: #E6E6E6;
+      color: $white_dark;
     }
   }
 

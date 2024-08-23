@@ -47,8 +47,8 @@
             justify-content: space-between;
             padding: 16px;
             border-radius: 16px;
-            border: 1px solid var(--Neutral-600, #F0F0F0);
-            background: var(--Neutral-500, #FAFAFA);
+            border: 1px solid #F0F0F0;
+            background: $body_colors;
 
             .modal_role_text {
                 color: $black_light;
@@ -63,8 +63,8 @@
                 height: 40px;
                 padding: 0px 16px;
                 border-radius: 10px;
-                border: 1px solid var(--Dark-Grey-30, #E9ECEF);
-                background: var(--White, #FFF);
+                border: 1px solid #E9ECEF;
+                background: $white;
                 outline: none;
             }
         }
@@ -88,6 +88,11 @@
                 align-items: center;
                 justify-content: center;
                 gap: 12px;
+                img{
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
             }
 
             .modal_btn_canse {

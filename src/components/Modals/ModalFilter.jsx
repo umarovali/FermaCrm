@@ -2,6 +2,8 @@ import React from 'react';
 import { CardActionArea } from '@mui/material';
 // import img
 import Close from "../../assets/icons/close.svg";
+import Add from "../../assets/icons/add.svg"
+import CloseFilter from "../../assets/icons/close-filter.svg"
 
 export default function ModalFilter({ userModal, setUserModal }) {
 
@@ -28,8 +30,14 @@ export default function ModalFilter({ userModal, setUserModal }) {
                     </select>
                 </div>
                 <div className="modal_btns">
-                    <CardActionArea className="modal_btn_canse">Отменить</CardActionArea>
-                    <CardActionArea className="modal_btn_filter">Фильтровать</CardActionArea>
+                    <CardActionArea className="modal_btn_canse">
+                        <img src={CloseFilter} alt="Close filter" />
+                        Отменить
+                        </CardActionArea>
+                    <CardActionArea className="modal_btn_filter">
+                        <img src={Add} alt="add filter" />
+                        Фильтровать
+                        </CardActionArea>
                 </div>
             </div>
         </div>

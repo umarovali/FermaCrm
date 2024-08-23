@@ -1,8 +1,11 @@
 import React from 'react';
 import SidebarItem from './SidebarItem';
 // react icons
-import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { IoSettingsOutline } from "react-icons/io5";
+import { RiBuilding2Line } from "react-icons/ri";
+import { BsPersonLinesFill } from "react-icons/bs";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdOutlinePostAdd } from "react-icons/md";
 // import img
 import Logo from "../../../assets/images/logo.svg"
 
@@ -14,11 +17,11 @@ export default function Sidebar() {
             <p className='sidebar_menu'>menu</p>
 
             <ul className='sidebar_list'>
-                <SidebarItem link="/user" Icon={HiOutlineBuildingOffice2} text={"Пользователи"} />
+                <SidebarItem link="/user" Icon={RiBuilding2Line} text={"Пользователи"} />
                 <SidebarItem link="/products" Icon={IoSettingsOutline} text={"Продукты"} />
-                <SidebarItem link="/clients" Icon={IoSettingsOutline} text={"Клиенты"} />
-                <SidebarItem link="/couriers" Icon={IoSettingsOutline} text={"Курьеры"} />
-                <SidebarItem link="/orders" Icon={IoSettingsOutline} text={"Заказы"} />
+                <SidebarItem link="/clients" Icon={BsPersonLinesFill} text={"Клиенты"} />
+                <SidebarItem link="/couriers" Icon={TbTruckDelivery} text={"Курьеры"} />
+                <SidebarItem link="/orders" Icon={MdOutlinePostAdd} text={"Заказы"} />
             </ul>
         </nav>
     )
