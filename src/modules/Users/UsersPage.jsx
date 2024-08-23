@@ -1,7 +1,7 @@
 import React from 'react'
 import User from './components/User'
 import { Route, Routes } from 'react-router-dom'
-import UserAdd from './components/UserAdd'
+import UserAdd from './pages/UsersAdd/UsersAdd'
 
 export default function UsersPage() {
     return (
