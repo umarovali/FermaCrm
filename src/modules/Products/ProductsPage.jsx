@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Product from './components/Product'
-import ProductAdd from './pages/ProductAdd'
+import ProductAdd from './pages/ProductAdd/ProductAdd'
 
 export default function ProductsPage() {
     return (
