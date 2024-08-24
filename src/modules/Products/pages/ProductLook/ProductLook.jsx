@@ -1,14 +1,17 @@
 import React from "react";
 import Header from "../../../../components/Header";
-import UserFormLook from "./UserFormLook";
+import ProductFormLook from "./ProductFormLook";
 import { useTranslation } from "react-i18next";
 
-export default function UserLook() {
+export default function ProductLook() {
+
   const { t } = useTranslation();
+
+
   return (
     <div>
-      <Header text={t("viewadministrator")} />
-      <UserFormLook/>
+      <Header text={t("viewproducts")} />
+      <ProductFormLook/>
     </div>
   );
 }

@@ -7,6 +7,9 @@ const translationsUz = {
   addsave: "Qo'shish va saqlash",
   editsave: "O'zgartirish va saqlash",
   productdata: "Mahsulot ma'lumotlari",
+  changeproduct: "Mahsulotlarni ko'ring",
+  changeuser: "Foydalanuvchini o'zgartirish",
+  viewadministrator: "Administratorni ko'ring",
 
 
   // sidebar

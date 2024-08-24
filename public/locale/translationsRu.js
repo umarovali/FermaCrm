@@ -7,6 +7,10 @@ const translationsRu = {
   addsave: " Добавить и сохранить",
   editsave: "Изменить и сохранить",
   productdata: "Данные продукта",
+  changeproduct: "Изменить продукт",
+  viewproducts: "Посмотреть продукты",
+  changeuser: "Изменить пользователя",
+  viewadministrator: "Посмотреть администратора",
 
   // sidebar
   menu: "меню",
