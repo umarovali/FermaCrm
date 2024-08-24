@@ -3,6 +3,7 @@ import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { CardActionArea } from "@mui/material";
 
 export default function BackLook() {
   const navigate = useNavigate();
@@ -10,10 +11,10 @@ export default function BackLook() {
 
   return (
     <>
-      <button onClick={() => navigate(-1)} className="user__form__btn1">
+      <CardActionArea onClick={() => navigate(-1)} className="user__form__btn1">
         <FaArrowLeftLong />
         {t("back")}
-      </button>
+      </CardActionArea>
     </>
   );
 }

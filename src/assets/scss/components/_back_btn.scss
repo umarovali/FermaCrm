@@ -1,29 +1,29 @@
 .user__form__btn1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 117px;
-    height: 44px;
-    border-radius: 18px;
-    background: #f0f0f0;
-    color: $black_light;
-    font-family: $golos_fonts;
-    font-size: 16px;
-    font-weight: 500;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 117px !important;
+    height: 44px !important;
+    border-radius: 18px !important;
+    background: #f0f0f0 !important;
+    color: $black_light !important;
+    font-family: $golos_fonts !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
 }
 
 .user__form__btn2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 234px;
-    height: 44px;
-    border-radius: 18px;
-    background: $orang;
-    color: $black_light;
-    font-family: $golos_fonts;
-    font-size: 15px;
-    font-weight: 500;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 234px !important;
+    height: 44px !important;
+    border-radius: 18px !important;
+    background: $orang !important;
+    color: $black_light !important;
+    font-family: $golos_fonts !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
 }
