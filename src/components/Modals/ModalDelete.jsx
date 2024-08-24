@@ -39,7 +39,7 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
             <h4>{t("delete")}</h4>
             <IoClose className='modal_close' onClick={handleClose} />
           </div>
-          <hr className="modal_delete__hr" />
+          <div className="modal_hr"></div>
           <div className="modal_delete__body">
             <h2>{t("reallydelete")}"{name}"?</h2>
             <div className="modal_delete__body-btns">

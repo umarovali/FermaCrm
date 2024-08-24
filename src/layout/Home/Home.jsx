@@ -4,7 +4,7 @@ import RoutePage from './components/RoutePage'
 
 export default function Home() {
     return (
-        <div className='flex'>
+        <div className='home'>
             <Sidebar />
 
             <RoutePage />

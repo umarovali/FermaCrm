@@ -17,16 +17,17 @@
             font-weight: 400;
         }
 
-       .modal_close {
-        color: $black_light;
-        font-size: 28px;
-        cursor: pointer;
-       }
+        .modal_close {
+            color: $black_light;
+            font-size: 28px;
+            cursor: pointer;
+        }
     }
 
-    .modal_delete__hr {
-        max-width: 100%;
-        box-sizing: border-box;
+    .modal_hr {
+        width: 100%;
+        height: 1px;
+        background: #F0F0F0;
     }
 
     .modal_delete__body {
