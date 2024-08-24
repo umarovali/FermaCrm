@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
-import User from "../../../../assets/images/user.svg"; 
+import User from "../../../../assets/images/user.svg";
+import BackLook from "../../../../components/Back/BackLook";
 
 export default function UserFormLook() {
   const navigate = useNavigate();
@@ -14,17 +15,14 @@ export default function UserFormLook() {
       <div className="container">
         <section className="user__form">
           <div className="user__form__header">
-            <button onClick={() => navigate(-1)} className="user__form__btn1">
-              <FaArrowLeftLong />
-              Назад
-            </button>
+            <BackLook />
           </div>
           <form>
             <div className="user__form__wrapper">
               <div className="user__form__left">
-                <img 
-                  src={User} 
-                  alt="user" 
+                <img
+                  src={User}
+                  alt="user"
                   style={{ cursor: "pointer" }}
                 />
                 <h4 style={{ cursor: "pointer" }}>Изменить</h4>

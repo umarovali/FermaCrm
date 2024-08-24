@@ -21,7 +21,7 @@ export default function ProductItem({ id, name, quantity, price, }) {
                     <CardActionArea className="table_btn_eye">
                         <FiEye className="table-icon" />
                     </CardActionArea>
-                    <CardActionArea className="table_btn_cahnge">
+                    <CardActionArea className="table_btn_change">
                         <LuPencil className="table-icon" />
                     </CardActionArea>
                     <CardActionArea className="table_btn_delete" onClick={handleOpen}>

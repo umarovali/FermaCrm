@@ -6,6 +6,7 @@ import Add from "../../../../assets/icons/add.svg";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
 import User from "../../../../assets/images/user.svg"; 
+import BackAdd from "../../../../components/Back/BackAdd";
 
 export default function UserForm() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -27,14 +28,7 @@ export default function UserForm() {
       <div className="container">
         <section className="user__form">
           <div className="user__form__header">
-            <button onClick={() => navigate(-1)} className="user__form__btn1">
-              <FaArrowLeftLong />
-              Назад
-            </button>
-            <button className="user__form__btn2">
-              <img src={Add} alt="add icon" />
-              Добавить и сохранить
-            </button>
+            <BackAdd />
           </div>
           <form>
             <div className="user__form__wrapper">

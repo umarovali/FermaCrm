@@ -12,37 +12,8 @@
     padding: 0 24px;
     height: 96px;
     border-bottom: 1px solid $white_dark;
-
-    .user__form__btn1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 117px;
-      height: 44px;
-      border-radius: 18px;
-      background: #f0f0f0;
-      color: $black_light;
-      font-family: $golos_fonts;
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .user__form__btn2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 234px;
-      height: 44px;
-      border-radius: 18px;
-      background: $orang;
-      color: $black_light;
-      font-family: $golos_fonts;
-      font-size: 15px;
-      font-weight: 500;
-    }
   }
+
   form {
     .user__form__wrapper {
       display: flex;
@@ -50,14 +21,17 @@
       justify-content: space-around;
       flex-wrap: wrap;
       margin-top: 41px;
+
       .user__form__left {
         width: 200px;
+
         img {
           width: 200px;
           height: 200px;
           border-radius: 16px;
           object-fit: contain;
         }
+
         h4 {
           color: $blue;
           text-align: center;
@@ -67,34 +41,40 @@
           margin-top: 14px;
         }
       }
+
       .user__form__right {
         .user__form__right-top {
           display: flex;
           align-items: start;
           gap: 60px;
+
           h2 {
             color: #020105;
             font-family: Golos;
             font-size: 16px;
             font-weight: 700;
           }
+
           .user__form__data {
             display: flex;
             align-items: start;
             flex-wrap: wrap;
             gap: 14px;
             width: 830px;
+
             .user__form__info {
               display: flex;
               align-items: start;
               flex-direction: column;
               gap: 5px;
+
               label {
                 color: #020105;
                 font-family: $golos_fonts;
                 font-size: 14px;
                 font-weight: 400;
               }
+
               input {
                 width: 408px;
                 height: 40px;
@@ -106,12 +86,14 @@
             }
           }
         }
+
         .hr {
           width: 100%;
           height: 2px;
           background: $white_dark;
           margin: 40px 0;
         }
+
         .user__form__right-bottom {
           display: flex;
           align-items: start;
@@ -138,22 +120,23 @@
             }
 
             .form__right__select {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 408px;
-                height: 40px;
-                border-radius: 12px;
-                border: 1px solid #e9ecef;
-                background: transparent;
-                padding: 0 12px; 
-                font-family: $golos_fonts;  
-                font-size: 14px;  
-                color: $gray;  
-              }
-              .form__right__icon{
-                font-size: 20px;
-              }
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 408px;
+              height: 40px;
+              border-radius: 12px;
+              border: 1px solid #e9ecef;
+              background: transparent;
+              padding: 0 12px;
+              font-family: $golos_fonts;
+              font-size: 14px;
+              color: $gray;
+            }
+
+            .form__right__icon {
+              font-size: 20px;
+            }
           }
         }
       }
