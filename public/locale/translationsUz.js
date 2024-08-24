@@ -7,6 +7,7 @@ const translationsUz = {
   addsave: "Qo'shish va saqlash",
   editsave: "O'zgartirish va saqlash",
   productdata: "Mahsulot ma'lumotlari",
+  changeproduct: "Mahsulotni o'zgartiring",
 
 
   // sidebar

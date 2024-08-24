@@ -7,6 +7,7 @@ const translationsKg = {
   addsave: "Кошуу жана сактоо",
   editsave: "Өзгөртүү жана сактоо",
   productdata: "Продукт маалыматтар",
+  changeproduct: "Продукцияны өзгөртүү",
 
 
   // sidebar
