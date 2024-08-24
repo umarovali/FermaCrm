@@ -1,8 +1,11 @@
 import React from 'react';
 import { IoIosArrowDown } from "react-icons/io";
 import ProductItem from './ProductItem';
+import { useTranslation } from "react-i18next";
 
 export default function ProductTable() {
+  const { t } = useTranslation();
+
     return (
         <section>
             <div className="container">
@@ -11,9 +14,9 @@ export default function ProductTable() {
                         <thead>
                             <tr>
                                 <th>№</th>
-                                <th>Наименование<IoIosArrowDown className="th_icon" /></th>
-                                <th>Количество<IoIosArrowDown className="th_icon" /></th>
-                                <th>Цена (сом)<IoIosArrowDown className="th_icon" /></th>
+                                <th>{t("name")}<IoIosArrowDown className="th_icon" /></th>
+                                <th>{t("quantity")}<IoIosArrowDown className="th_icon" /></th>
+                                <th>{t("price")} (сом)<IoIosArrowDown className="th_icon" /></th>
                                 <th></th>
                             </tr>
                         </thead>

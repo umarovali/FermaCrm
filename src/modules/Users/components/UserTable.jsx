@@ -2,8 +2,10 @@ import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import UserItem from "./UserItem";
 import PaginationTable from "../../../components/PaginationTable";
+import { useTranslation } from "react-i18next";
 
 export default function UserTable() {
+  const { t } = useTranslation();
   return (
     <section>
       <div className="container">
@@ -12,9 +14,9 @@ export default function UserTable() {
             <thead>
               <tr>
                 <th>№</th>
-                <th>Ф.И.О.<IoIosArrowDown className="th_icon" /></th>
-                <th>Телефон<IoIosArrowDown className="th_icon" /></th>
-                <th>Роль<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("fullname")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("telephone")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("role")}<IoIosArrowDown className="th_icon" /></th>
                 <th></th>
               </tr>
             </thead>

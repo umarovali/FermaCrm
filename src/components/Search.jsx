@@ -5,12 +5,15 @@ import { CardActionArea } from '@mui/material';
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ModalFilter from "./Modals/ModalFilter";
+import { useTranslation } from "react-i18next";
 
 const SearchUser = () => {
   const [userModal, setUserModal] = useState(false);
   const handleOpenModal = () => {
     setUserModal(true);
   };
+
+  const { t } = useTranslation();
 
   return (
     <section>
@@ -19,12 +22,12 @@ const SearchUser = () => {
           <div className="search__left">
             <div className="search__input">
               <FiSearch className="search__icon" />
-              <input type="text" placeholder="Поиск" />
+              <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
               <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
                 <img src={toggle} alt="icon" />
-                Фильтр
+                {t("filter")}
               </CardActionArea>
               <ModalFilter userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -33,7 +36,7 @@ const SearchUser = () => {
           <Link to="/user/user_add" className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              Добавить
+              {t("add")}
             </CardActionArea>
           </Link>
         </div>
@@ -48,6 +51,9 @@ const SearchProduct = () => {
     setUserModal(true);
   };
 
+  const { t } = useTranslation();
+
+
   return (
     <section>
       <div className="container">
@@ -55,12 +61,12 @@ const SearchProduct = () => {
           <div className="search__left">
             <div className="search__input">
               <FiSearch className="search__icon" />
-              <input type="text" placeholder="Поиск" />
+              <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
               <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
                 <img src={toggle} alt="icon" />
-                Фильтр
+                {t("filter")}
               </CardActionArea>
               <ModalFilter userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -69,7 +75,7 @@ const SearchProduct = () => {
           <Link to="/products/product-add" className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              Добавить
+              {t("add")}
             </CardActionArea>
           </Link>
         </div>

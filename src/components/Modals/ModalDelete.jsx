@@ -3,6 +3,7 @@ import { CardActionArea, Modal, Box } from "@mui/material";
 import { IoClose } from "react-icons/io5";
 import Delete from "../../assets/icons/delete.svg";
 import Cancel from "../../assets/icons/cancel.svg";
+import { useTranslation } from "react-i18next";
 
 export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
   const handleClose = () => setOpen(false);
@@ -11,6 +12,8 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
     onDelete(id);
     handleClose();
   };
+
+  const { t } = useTranslation();
 
   return (
     <Modal
@@ -33,18 +36,18 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
       >
         <div className="modal_delete">
           <div className="modal_delete__header">
-            <h4>Удалить</h4>
+            <h4>{t("delete")}</h4>
             <IoClose className='modal_close' onClick={handleClose} />
           </div>
           <hr className="modal_delete__hr" />
           <div className="modal_delete__body">
-            <h2>Вы действительно хотите удалить "{name}"?</h2>
+            <h2>{t("reallydelete")}"{name}"?</h2>
             <div className="modal_delete__body-btns">
               <CardActionArea className="btns__1" onClick={handleClose}>
-                <img src={Cancel} alt="Cancel-icon" /> Отменить
+                <img src={Cancel} alt="Cancel-icon" /> {t("cancel")}
               </CardActionArea>
               <CardActionArea className="btns__2" onClick={handleConfirmDelete}>
-                <img src={Delete} alt="Delete-icon" /> Да, удалить
+                <img src={Delete} alt="Delete-icon" /> {t("yesdelete")}
               </CardActionArea>
             </div>
           </div>
