@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 export default function ClientsPage() {
     return (
         <Routes>
-            <Route index element={<Clients />} />
+            <Route path='/' element={<Clients />} />
         </Routes>
     )
 }

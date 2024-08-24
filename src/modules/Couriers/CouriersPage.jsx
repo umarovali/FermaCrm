@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 export default function CouriersPage() {
     return (
         <Routes>
-            <Route index element={<Couriers />} />
+            <Route path='/' element={<Couriers />} />
         </Routes>
     )
 }

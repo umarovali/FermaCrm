@@ -33,10 +33,17 @@ const translationsKg = {
   telephone: "Телефон",
   role: "Ролу",
 
-  // productname
+  // productTable
   name: "Аталышы",
   quantity: "Өлчөмү",
   price: "Баасы",
+
+  // couriersTable
+  salary: "Эмгек акылар",
+
+  // clientsTable
+  сourier: "Курьер",
+  iin: "ИИН",
 
   // user add
   useradd: "Колдонуучу кошуу",
@@ -48,8 +55,8 @@ const translationsKg = {
   chooserole: "Ролду тандаңыз",
   administrator: "Администратор",
 
-    // modal
-    reallydelete: "Сиз чындыгында жок кылгыңыз келет",
+  // modal
+  reallydelete: "Сиз чындыгында жок кылгыңыз келет",
 
 };
 

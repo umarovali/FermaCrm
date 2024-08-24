@@ -5,7 +5,7 @@ import Orders from './Components/Orders'
 export default function OrdersPage() {
     return (
         <Routes>
-            <Route index element={<Orders />} />
+            <Route path='/' element={<Orders />} />
         </Routes>
     )
 }

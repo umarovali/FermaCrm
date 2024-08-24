@@ -33,10 +33,17 @@ const translationsUz = {
   telephone: "Telefon",
   role: "Roli",
 
-  // productname
+  // productTable
   name: "Nomi",
   quantity: "Miqdori",
   price: "Narxi",
+
+  // couriersTable
+  salary: "Maoshlar",
+
+  // clientsTable
+  сourier: "Kuryer",
+  iin: "IIN",
 
   // user add
   useradd: "Foydalanuvchi qo'shish",
@@ -48,8 +55,8 @@ const translationsUz = {
   chooserole: "Rolni tanlang",
   administrator: "Administrator",
 
-    // modal
-    reallydelete: "Siz haqiqatan ham o'chirishni xohlaysiz",
+  // modal
+  reallydelete: "Siz haqiqatan ham o'chirishni xohlaysiz",
 
 };
 

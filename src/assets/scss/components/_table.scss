@@ -1,12 +1,13 @@
-.usertable {
+.table_bg {
   width: 100%;
   border-radius: 24px;
   background: $white;
   box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
   padding: 24px;
   margin-top: 24px;
+  min-height: 464px;
 
-  .user_table {
+  .table {
     width: 100%;
 
     .table_btn_eye,
@@ -67,7 +68,7 @@
             max-width: 48px;
           }
 
-          &:nth-child(5) {
+          &:nth-last-child(1) {
             max-width: 100px;
           }
         }
@@ -79,7 +80,7 @@
 
       tr {
         width: 100%;
-        height: 40px;
+        height: 39px;
         display: flex;
         align-items: center;
         background-color: transparent;
@@ -98,19 +99,12 @@
             max-width: 48px;
           }
 
-          &:nth-child(5) {
+          &:nth-last-child(1) {
             max-width: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
-
-            .action-btn {
-              background: none;
-              border: none;
-              cursor: pointer;
-              font-size: 15px;
-            }
           }
         }
       }

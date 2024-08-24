@@ -6,7 +6,7 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
-export default function UserItem({ id, name, tel, role }) {
+export default function ClientsItem({ id, name, tel, courier, iin }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -17,14 +17,15 @@ export default function UserItem({ id, name, tel, role }) {
         <td>{id}</td>
         <td>{name}</td>
         <td>{tel}</td>
-        <td>{role}</td>
+        <td>{iin}</td>
+        <td>{courier}</td>
         <td>
-          <Link to={"/user/user_look"}>
+          <Link to={""}>
             <CardActionArea className="table_btn_eye">
               <FiEye className="table_icon" />
             </CardActionArea>
           </Link>
-          <Link to={"/user/user_edit"}>
+          <Link to={""}>
             <CardActionArea className="table_btn_change">
               <LuPencil className="table_icon" />
             </CardActionArea>

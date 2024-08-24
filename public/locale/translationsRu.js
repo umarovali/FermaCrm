@@ -32,10 +32,17 @@ const translationsRu = {
   telephone: "Телефон",
   role: "Роль",
 
-  // productname
+  // productTable
   name: "Наименование",
   quantity: "Количество",
   price: "Цена",
+
+  // couriersTable
+  salary: "Зарплаты",
+
+  // clientsTable
+  сourier: "Курьер",
+  iin: "ИИН",
 
   // user add
   useradd: "Добавить пользователя",

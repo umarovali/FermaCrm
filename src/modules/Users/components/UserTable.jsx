@@ -9,8 +9,8 @@ export default function UserTable() {
   return (
     <section>
       <div className="container">
-        <div className="usertable">
-          <table className="user_table">
+        <div className="table_bg">
+          <table className="table">
             <thead>
               <tr>
                 <th>№</th>
