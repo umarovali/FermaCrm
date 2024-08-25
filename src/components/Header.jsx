@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 // import images
 import LanguageIconRu from "../assets/images/languageru.webp";
@@ -32,7 +32,7 @@ export default function Header({ text }) {
 
   const [isLanguageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]); 
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
 
   const toggleLanguageDropdown = () => {
     setLanguageDropdownOpen(!isLanguageDropdownOpen);
@@ -46,11 +46,23 @@ export default function Header({ text }) {
     setSelectedLanguage(language);
     setLanguageDropdownOpen(false);
     changeLang(language.value);
+    localStorage.setItem("selectedLanguage", language.value);
   };
 
   const changeLang = (value) => {
     i18n.changeLanguage(value);
   };
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+    if (savedLanguage) {
+      const language = languageOptions.find(lang => lang.value === savedLanguage);
+      if (language) {
+        setSelectedLanguage(language);
+        changeLang(savedLanguage);
+      }
+    }
+  }, []);
 
   const { t } = useTranslation();
 
@@ -78,7 +90,7 @@ export default function Header({ text }) {
               {isLanguageDropdownOpen && (
                 <div className="language_dropdown">
                   {languageOptions
-                    .filter((language) => language.code !== selectedLanguage.code) 
+                    .filter((language) => language.code !== selectedLanguage.code)
                     .map((language) => (
                       <div
                         key={language.code}
