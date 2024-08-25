@@ -22,7 +22,7 @@ export const routes = [
     },
     {
         id: 4,
-        path: "/couriers",
+        path: "/couriers/*",
         element: <CouriersPage />
     },
     {

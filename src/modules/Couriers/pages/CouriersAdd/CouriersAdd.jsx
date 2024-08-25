@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../../../../components/Header";
-import UserForm from "./UsersForm";
 import { useTranslation } from "react-i18next";
+import CouriersForm from "./CouriersForm";
 
-export default function UserAdd() {
+export default function CouriersAdd() {
   const { t } = useTranslation();
-
   return (
-    <>
-      <Header text={t("useradd")} />
-      <UserForm />
-    </>
+    <div>
+      <Header text={t("couriersadd")} />
+      <CouriersForm />
+    </div>
   );
 }

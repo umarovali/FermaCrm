@@ -1,5 +1,5 @@
 const translationsUz = {
-  news:"Yangi",
+  news: "Yangi",
   link: "Havola",
   location: "Joylashuv",
   total: "Jami",
@@ -84,11 +84,12 @@ const translationsUz = {
   all: "Hammasi",
   new: "Yangi",
   deliverednotpaid: "Yetkazib berildi, to'lanmadi",
-  orderaccepted:"Buyurtma qabul qilindi",
+  orderaccepted: "Buyurtma qabul qilindi",
 
-    // status
+  // couriers add
 
-    news:"Yangi",
+  couriersadd: "Kuryer qo'shish",
+  couriersedit: "Kurerni o'zgartirish",
 
 };
 

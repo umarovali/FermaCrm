@@ -1,5 +1,5 @@
 const translationsRu = {
-  news:"Новый",
+  news: "Новый",
   link: "Ссылка",
   location: "Локация",
   total: "Всего",
@@ -83,10 +83,13 @@ const translationsRu = {
   // filter
 
   all: "Все",
-  new:"Новое",
-  deliverednotpaid:"Доставлено, не оплачено",
-  orderaccepted:"Заказ принят",
+  new: "Новое",
+  deliverednotpaid: "Доставлено, не оплачено",
+  orderaccepted: "Заказ принят",
 
+  // couriers add
+  couriersadd: "Добавить курьера",
+  couriersedit: "Изменить курьера",
 };
 
 export default translationsRu;
