@@ -17,7 +17,7 @@ export default function ClientsTable() {
                 <th>{t("fullname")}<IoIosArrowDown className="th_icon" /></th>
                 <th>{t("telephone")}<IoIosArrowDown className="th_icon" /></th>
                 <th>{t("iin")}<IoIosArrowDown className="th_icon" /></th>
-                <th>{t("сourier")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("couriers")}<IoIosArrowDown className="th_icon" /></th>
                 <th></th>
               </tr>
             </thead>

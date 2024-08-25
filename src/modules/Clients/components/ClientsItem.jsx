@@ -20,12 +20,12 @@ export default function ClientsItem({ id, name, tel, courier, iin }) {
         <td>{iin}</td>
         <td>{courier}</td>
         <td>
-          <Link to={""}>
+          <Link to={"/clients/client-look"}>
             <CardActionArea className="table_btn_eye">
               <FiEye className="table_icon" />
             </CardActionArea>
           </Link>
-          <Link to={""}>
+          <Link to={"/clients/client-edit"}>
             <CardActionArea className="table_btn_change">
               <LuPencil className="table_icon" />
             </CardActionArea>

@@ -1,0 +1,193 @@
+.client__form {
+  width: 100%;
+  height: 1000px;
+  border-radius: 24px;
+  background: $white;
+  box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+
+  .client__form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 96px;
+    border-bottom: 1px solid $white_dark;
+  }
+
+  form {
+    .client__form__wrapper {
+      display: flex;
+      align-items: start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 41px;
+
+      .client__form__left {
+        width: 200px;
+
+        img {
+          width: 200px;
+          height: 200px;
+          border-radius: 16px;
+          object-fit: contain;
+        }
+
+        h4 {
+          color: $blue;
+          text-align: center;
+          font-family: $golos_fonts;
+          font-size: 14px;
+          font-weight: 400;
+          margin-top: 14px;
+        }
+      }
+
+      .client__form__right {
+        .client__form__right-top {
+          display: flex;
+          align-items: start;
+          gap: 60px;
+
+          h2 {
+            color: #020105;
+            font-family: Golos;
+            font-size: 16px;
+            font-weight: 700;
+          }
+
+          .client__form__data {
+            display: flex;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 14px;
+            width: 830px;
+
+            .client__form__info {
+              display: flex;
+              align-items: start;
+              flex-direction: column;
+              gap: 5px;
+
+              label {
+                color: #020105;
+                font-family: $golos_fonts;
+                font-size: 14px;
+                font-weight: 400;
+              }
+
+              input {
+                width: 400px;
+                height: 40px;
+                border-radius: 12px;
+                border: 1px solid #e9ecef;
+                background: $white;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+
+        .hr {
+          width: 100%;
+          height: 2px;
+          background: $white_dark;
+          margin: 40px 0;
+        }
+
+        .client__form__right-bottom {
+          display: flex;
+          align-items: start;
+          gap: 60px;
+
+          h2 {
+            color: #020105;
+            font-family: $golos_fonts;
+            font-size: 16px;
+            font-weight: 600;
+            width: 150px;
+          }
+
+          .client__form__info {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+              color: #020105;
+              font-family: $golos_fonts;
+              font-size: 14px;
+              font-weight: 400;
+            }
+
+            .form__right__select {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 408px;
+              height: 40px;
+              border-radius: 12px;
+              border: 1px solid #e9ecef;
+              background: transparent;
+              padding: 0 12px;
+              font-family: $golos_fonts;
+              font-size: 14px;
+              color: $gray;
+            }
+
+            .form__right__icon {
+              font-size: 20px;
+            }
+          }
+          .client__form-map {
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            gap: 14px;
+
+            iframe {
+              width: 911px;
+              height: 350px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              background: lightgray 50% / cover no-repeat;
+            }
+
+            label {
+              color: #020105;
+              font-family: $golos_fonts;
+              font-size: 14px;
+              font-weight: 400;
+            }
+
+            .client__form-map-input {
+              display: flex;
+              align-items: center;
+              width: 911px;
+              height: 40px;
+              border-radius: 12px;
+              border: 1px solid #e9ecef;
+              background: $white;
+              gap: 8px;
+              input {
+                width: 95%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                padding-left: 10px;
+              }
+
+              .icon-copy {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
