@@ -130,6 +130,15 @@ const SearchOrders = () => {
     setUserModal(true);
   };
 
+<<<<<<< HEAD
+=======
+const SearchCouriers = () => {
+  const [userModal, setUserModal] = useState(false);
+  const handleOpenModal = () => {
+    setUserModal(true);
+  };
+
+>>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65
   const { t } = useTranslation();
 
 
@@ -151,7 +160,11 @@ const SearchOrders = () => {
             </div>
           </div>
 
+<<<<<<< HEAD
           <Link to={"/orders/order-add"} className="search__right">
+=======
+          <Link to={"/couriers/couriers-add"} className="search__right">
+>>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
               {t("add")}
@@ -163,4 +176,9 @@ const SearchOrders = () => {
   );
 }
 
+<<<<<<< HEAD
 export { SearchUser, SearchProduct, SearchClient, SearchOrders };
+=======
+
+export { SearchUser, SearchProduct, SearchClient, SearchCouriers };
+>>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65

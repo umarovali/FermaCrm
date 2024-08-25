@@ -1,5 +1,5 @@
 const translationsKg = {
-  news:"Жаңы",
+  news: "Жаңы",
   link: "Шилтеме",
   location: "Жайгашуу",
   total: "Бардыгы",
@@ -87,9 +87,10 @@ const translationsKg = {
   deliverednotpaid: "Жеткирилген, төлөнгөн эмес",
   orderaccepted: "Заказ кабыл алынды",
 
-    // status
+  // couriers add
 
-    news:"Жаңы",
+  couriersadd: "Курьер кошуу",
+  couriersedit: "Курьерди өзгөртүү",
 
 };
 

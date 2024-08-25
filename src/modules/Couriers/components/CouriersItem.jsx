@@ -20,12 +20,12 @@ export default function CouriersItem({ id, name, tel, salary }) {
                 <td>{tel}</td>
                 <td>{salary}</td>
                 <td>
-                    <Link to={""}>
+                    <Link to={"/couriers/couriers-look"}>
                         <CardActionArea className="table_btn_eye">
                             <FiEye className="table_icon" />
                         </CardActionArea>
                     </Link>
-                    <Link to={""}>
+                    <Link to={"/couriers/couriers-edit"}>
                         <CardActionArea className="table_btn_change">
                             <LuPencil className="table_icon" />
                         </CardActionArea>
