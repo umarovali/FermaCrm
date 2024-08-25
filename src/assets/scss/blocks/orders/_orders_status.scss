@@ -1,0 +1,39 @@
+.status_new,
+.status_paid,
+.status_deliv_unpaid,
+.status_accepted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-family: $golos_fonts;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: 25px;
+    width: 100%;
+}
+
+.status_new {
+    border: 1px solid #A3CDFF;
+    background: #EAF3FB;
+    color: #0A79FF;
+}
+
+.status_paid {
+    border: 1px solid #6CD276;
+    background: #EAFBEC;
+    color: #00AE11;
+}
+
+.status_deliv_unpaid {
+    border: 1px solid #D26C6C;
+    background: #FBEAEA;
+    color: #DB0808;
+}
+
+.status_accepted {
+    border: 1px solid #FFD494;
+    background: #FBF8EA;
+    color: #FF9A03;
+}

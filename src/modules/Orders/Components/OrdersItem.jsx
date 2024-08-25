@@ -6,7 +6,7 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
-export default function OrdersItem({ id, num_id, sum, paid, remainder, client }) {
+export default function OrdersItem({ id, num_id, sum, paid, remainder, client, status }) {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
@@ -20,6 +20,7 @@ export default function OrdersItem({ id, num_id, sum, paid, remainder, client })
                 <td>{paid}</td>
                 <td>{remainder}</td>
                 <td>{client}</td>
+                <td>{status}</td>
                 <td>
                     <Link to={""}>
                         <CardActionArea className="table_btn_eye">
