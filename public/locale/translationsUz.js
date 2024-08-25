@@ -1,5 +1,5 @@
 const translationsUz = {
-  link:"Havola",
+  link: "Havola",
   location: "Joylashuv",
   total: "Jami",
   piece: "dona",
@@ -14,7 +14,6 @@ const translationsUz = {
   changeproduct: "Mahsulotlarni ko'ring",
   changeuser: "Foydalanuvchini o'zgartirish",
   viewadministrator: "Administratorni ko'ring",
-
 
   // sidebar
   menu: "Menu",
@@ -49,6 +48,7 @@ const translationsUz = {
   salary: "Maoshlar",
 
   // clientsTable
+  customer: "Mijoz",
   сourier: "Kuryer",
   iin: "IIN",
 
@@ -67,12 +67,23 @@ const translationsUz = {
 
   // client
 
-  addclient:"Mijoz qo'shish",
-  editclient:"Mijozni o'zgartirish",
-  lookclient:"Mijozni ko'rish",
+  addclient: "Mijoz qo'shish",
+  editclient: "Mijozni o'zgartirish",
+  lookclient: "Mijozni ko'rish",
 
+  // order
+  numberid: "Raqam / ID",
+  amount: "Miqdori",
+  paidfor: "To'langan",
+  remains: "Qolgan",
+  status: "Holati",
 
+  // filter
 
+  all: "Hammasi",
+  new: "Yangi",
+  deliverednotpaid: "Yetkazib berildi, to'lanmadi",
+  orderaccepted:"Buyurtma qabul qilindi",
 };
 
 export default translationsUz;

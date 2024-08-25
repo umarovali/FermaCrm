@@ -1,5 +1,5 @@
 const translationsKg = {
-  link:"Шилтеме",
+  link: "Шилтеме",
   location: "Жайгашуу",
   total: "Бардыгы",
   piece: "даана",
@@ -49,6 +49,7 @@ const translationsKg = {
   salary: "Эмгек акылар",
 
   // clientsTable
+  customer: "Кардар",
   сourier: "Курьер",
   iin: "ИИН",
 
@@ -68,10 +69,22 @@ const translationsKg = {
   // client
 
   addclient: "Кардар кошуу",
-  editclient:"Кардарды өзгөртүү",
-  lookclient:"Кардарды көрүү",
+  editclient: "Кардарды өзгөртүү",
+  lookclient: "Кардарды көрүү",
 
+  // order
+  numberid: "Номер/ID",
+  amount: "Суммасы",
+  paidfor: "Камтылган",
+  remains: "Калдык",
+  status: "Статусу",
 
+  // filter
+
+  all: "Бардык",
+  new: "Жаңы",
+  deliverednotpaid: "Жеткирилген, төлөнгөн эмес",
+  orderaccepted: "Заказ кабыл алынды",
 };
 
 export default translationsKg;

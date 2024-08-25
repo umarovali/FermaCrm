@@ -1,5 +1,5 @@
 const translationsRu = {
-  link:"Ссылка",
+  link: "Ссылка",
   location: "Локация",
   total: "Всего",
   piece: "штука",
@@ -49,6 +49,7 @@ const translationsRu = {
   salary: "Зарплаты",
 
   // clientsTable
+  customer: "Клиент",
   сourier: "Курьер",
   iin: "ИИН",
 
@@ -65,11 +66,26 @@ const translationsRu = {
   // modal
   reallydelete: "Вы действительно хотите удалить",
 
-   // client
+  // client
 
-   addclient:"Добавить клиента",
-   editclient:"Изменить клиента",
-   lookclient:"Посмотреть клиент",
+  addclient: "Добавить клиента",
+  editclient: "Изменить клиента",
+  lookclient: "Посмотреть клиент",
+
+  // order
+  numberid: "Номер/ID",
+  amount: "Сумма",
+  paidfor: "Оплачено",
+  remains: "Остаток",
+  status: "Статус",
+
+  // filter
+
+  all: "Все",
+  new:"Новое",
+  deliverednotpaid:"Доставлено, не оплачено",
+  orderaccepted:"Заказ принят",
+
 
 };
 

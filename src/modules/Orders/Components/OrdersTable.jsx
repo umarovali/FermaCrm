@@ -17,12 +17,12 @@ export default function OrdersTble() {
             <thead>
               <tr>
                 <th>№</th>
-                <th>{t("fullname")}<IoIosArrowDown className="th_icon" /></th>
-                <th>{t("telephone")}<IoIosArrowDown className="th_icon" /></th>
-                <th>{t("role")}<IoIosArrowDown className="th_icon" /></th>
-                <th>Остаток<IoIosArrowDown className="th_icon" /></th>
-                <th>Клиент<IoIosArrowDown className="th_icon" /></th>
-                <th>Статус<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("numberid")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("amount")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("paidfor")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("remains")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("customer")}<IoIosArrowDown className="th_icon" /></th>
+                <th>{t("status")}<IoIosArrowDown className="th_icon" /></th>
                 <th></th>
               </tr>
             </thead>
