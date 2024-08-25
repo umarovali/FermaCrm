@@ -1,4 +1,5 @@
 const translationsKg = {
+  news:"Жаңы",
   link: "Шилтеме",
   location: "Жайгашуу",
   total: "Бардыгы",
@@ -85,6 +86,11 @@ const translationsKg = {
   new: "Жаңы",
   deliverednotpaid: "Жеткирилген, төлөнгөн эмес",
   orderaccepted: "Заказ кабыл алынды",
+
+    // status
+
+    news:"Жаңы",
+
 };
 
 export default translationsKg;

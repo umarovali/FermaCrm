@@ -1,4 +1,5 @@
 const translationsRu = {
+  news:"Новый",
   link: "Ссылка",
   location: "Локация",
   total: "Всего",
@@ -85,7 +86,6 @@ const translationsRu = {
   new:"Новое",
   deliverednotpaid:"Доставлено, не оплачено",
   orderaccepted:"Заказ принят",
-
 
 };
 

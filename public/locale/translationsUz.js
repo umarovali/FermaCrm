@@ -1,4 +1,5 @@
 const translationsUz = {
+  news:"Yangi",
   link: "Havola",
   location: "Joylashuv",
   total: "Jami",
@@ -84,6 +85,11 @@ const translationsUz = {
   new: "Yangi",
   deliverednotpaid: "Yetkazib berildi, to'lanmadi",
   orderaccepted:"Buyurtma qabul qilindi",
+
+    // status
+
+    news:"Yangi",
+
 };
 
 export default translationsUz;
