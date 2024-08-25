@@ -124,21 +124,12 @@ const SearchClient = () => {
   );
 }
 
-const SearchOrders = () => {
-  const [userModal, setUserModal] = useState(false);
-  const handleOpenModal = () => {
-    setUserModal(true);
-  };
-
-<<<<<<< HEAD
-=======
 const SearchCouriers = () => {
   const [userModal, setUserModal] = useState(false);
   const handleOpenModal = () => {
     setUserModal(true);
   };
 
->>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65
   const { t } = useTranslation();
 
 
@@ -160,11 +151,7 @@ const SearchCouriers = () => {
             </div>
           </div>
 
-<<<<<<< HEAD
           <Link to={"/orders/order-add"} className="search__right">
-=======
-          <Link to={"/couriers/couriers-add"} className="search__right">
->>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
               {t("add")}
@@ -176,9 +163,43 @@ const SearchCouriers = () => {
   );
 }
 
-<<<<<<< HEAD
-export { SearchUser, SearchProduct, SearchClient, SearchOrders };
-=======
+const SearchOrders = () => {
+  const [userModal, setUserModal] = useState(false);
+  const handleOpenModal = () => {
+    setUserModal(true);
+  };
 
-export { SearchUser, SearchProduct, SearchClient, SearchCouriers };
->>>>>>> 11c4e91ad0b3573a32810e8097a10c437c3bcf65
+  const { t } = useTranslation();
+
+
+  return (
+    <section>
+      <div className="container">
+        <div className="search">
+          <div className="search__left">
+            <div className="search__input">
+              <FiSearch className="search__icon" />
+              <input type="text" placeholder={t("search")} />
+            </div>
+            <div className="search_wrapper_modal">
+              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+                <img src={toggle} alt="icon" />
+                {t("filter")}
+              </CardActionArea>
+              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+            </div>
+          </div>
+
+          <Link to={"/couriers/couriers-add"} className="search__right">
+            <CardActionArea className="add__btn">
+              <IoMdAddCircleOutline className="add__icon" />
+              {t("add")}
+            </CardActionArea>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export { SearchUser, SearchProduct, SearchClient, SearchCouriers, SearchOrders };
