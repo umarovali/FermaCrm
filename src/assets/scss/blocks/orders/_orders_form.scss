@@ -1,0 +1,12 @@
+.order_form {
+    .order_back_bg {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 96px;
+        border-radius: 24px;
+        background: $white;
+        box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+        padding: 0px 24px;
+    }
+}

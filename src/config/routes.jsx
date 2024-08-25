@@ -27,7 +27,7 @@ export const routes = [
     },
     {
         id: 5,
-        path: "/orders",
+        path: "/orders/*",
         element: <OrdersPage />
     },
 ]

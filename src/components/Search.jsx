@@ -124,5 +124,43 @@ const SearchClient = () => {
   );
 }
 
+const SearchOrders = () => {
+  const [userModal, setUserModal] = useState(false);
+  const handleOpenModal = () => {
+    setUserModal(true);
+  };
 
-export { SearchUser, SearchProduct, SearchClient };
+  const { t } = useTranslation();
+
+
+  return (
+    <section>
+      <div className="container">
+        <div className="search">
+          <div className="search__left">
+            <div className="search__input">
+              <FiSearch className="search__icon" />
+              <input type="text" placeholder={t("search")} />
+            </div>
+            <div className="search_wrapper_modal">
+              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+                <img src={toggle} alt="icon" />
+                {t("filter")}
+              </CardActionArea>
+              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+            </div>
+          </div>
+
+          <Link to={"/orders/order-add"} className="search__right">
+            <CardActionArea className="add__btn">
+              <IoMdAddCircleOutline className="add__icon" />
+              {t("add")}
+            </CardActionArea>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export { SearchUser, SearchProduct, SearchClient, SearchOrders };

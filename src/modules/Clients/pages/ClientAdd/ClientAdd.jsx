@@ -8,9 +8,9 @@ export default function ClientAdd() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       <Header text={t("addclient")} />
       <ClientForm />
-    </div>
+    </>
   );
 }

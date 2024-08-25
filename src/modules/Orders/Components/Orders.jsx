@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../../components/Header'
 import { useTranslation } from "react-i18next";
 import OrdersTable from './OrdersTable';
-import { SearchUser } from '../../../components/Search';
+import { SearchOrders } from '../../../components/Search';
 
 export default function Orders() {
   const { t } = useTranslation();
@@ -10,7 +10,7 @@ export default function Orders() {
   return (
     <>
       <Header text={t("orders")} />
-      <SearchUser />
+      <SearchOrders />
       <OrdersTable />
     </>
   )
