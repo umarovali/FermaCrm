@@ -12,7 +12,6 @@ export default function ProductEditForm() {
           <div className="product_back">
             <BackEdit/>
           </div>
-          <hr />
           <div className="product_form">
             <h2 className='product_form_title'>{t("productdata")}</h2>
 

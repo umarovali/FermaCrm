@@ -1,4 +1,8 @@
 const translationsKg = {
+  link:"Шилтеме",
+  location: "Жайгашуу",
+  total: "Бардыгы",
+  piece: "даана",
   back: "Артка",
   delete: "Чыгаруу",
   cancel: "Жокко чыгаруу",
@@ -11,7 +15,6 @@ const translationsKg = {
   viewproducts: "Продукцияларды көрүү",
   changeuser: "Колдонуучуну өзгөртүү",
   viewadministrator: "Администраторду көрүү",
-
 
   // sidebar
   menu: "меню",
@@ -61,6 +64,13 @@ const translationsKg = {
 
   // modal
   reallydelete: "Сиз чындыгында жок кылгыңыз келет",
+
+  // client
+
+  addclient: "Кардар кошуу",
+  editclient:"Кардарды өзгөртүү",
+  lookclient:"Кардарды көрүү",
+
 
 };
 

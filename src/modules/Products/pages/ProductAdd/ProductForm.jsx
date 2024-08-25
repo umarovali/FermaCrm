@@ -13,7 +13,6 @@ export default function ProductForm() {
                     <div className="product_back">
                         <BackAdd/>
                     </div>
-                    <hr />
                     <div className="product_form">
                         <h2 className='product_form_title'>{t("productdata")}</h2>
 

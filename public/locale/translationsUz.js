@@ -1,4 +1,8 @@
 const translationsUz = {
+  link:"Havola",
+  location: "Joylashuv",
+  total: "Jami",
+  piece: "dona",
   back: "Orqaga",
   delete: "O'chirish",
   cancel: "Bekor qilish",
@@ -60,6 +64,14 @@ const translationsUz = {
 
   // modal
   reallydelete: "Siz haqiqatan ham o'chirishni xohlaysiz",
+
+  // client
+
+  addclient:"Mijoz qo'shish",
+  editclient:"Mijozni o'zgartirish",
+  lookclient:"Mijozni ko'rish",
+
+
 
 };
 

@@ -1,4 +1,8 @@
 const translationsRu = {
+  link:"Ссылка",
+  location: "Локация",
+  total: "Всего",
+  piece: "штука",
   back: "Назад",
   delete: "Удалить",
   cancel: "Отменить ",
@@ -60,6 +64,12 @@ const translationsRu = {
 
   // modal
   reallydelete: "Вы действительно хотите удалить",
+
+   // client
+
+   addclient:"Добавить клиента",
+   editclient:"Изменить клиента",
+   lookclient:"Посмотреть клиент",
 
 };
 

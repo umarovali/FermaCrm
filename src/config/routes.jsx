@@ -17,7 +17,7 @@ export const routes = [
     },
     {
         id: 3,
-        path: "/clients",
+        path: "/clients/*",
         element: <ClientsPage />
     },
     {

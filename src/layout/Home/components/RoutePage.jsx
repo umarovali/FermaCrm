@@ -7,7 +7,7 @@ export default function RoutePage() {
     return (
         <div className="routes">
             <Routes>
-                <Route index element={<UsersPage />} />
+                <Route path="/*" element={<UsersPage />} />
                 {routes.map(route => (
                     <Route key={route.id} path={route.path} element={route.element} />
                 ))}
