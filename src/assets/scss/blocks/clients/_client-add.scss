@@ -15,15 +15,20 @@
   }
 
   form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 60px;
+    padding: 41px 24px;
+
     .client__form__wrapper {
-      display: flex;
-      align-items: start;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 41px;
+      display: contents;
 
       .client__form__left {
-        width: 200px;
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
 
         img {
           width: 200px;
@@ -43,10 +48,15 @@
       }
 
       .client__form__right {
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+
         .client__form__right-top {
-          display: flex;
-          align-items: start;
+          display: grid;
+          grid-template-columns: auto 1fr;
           gap: 60px;
+          align-items: start;
 
           h2 {
             color: #020105;
@@ -56,15 +66,13 @@
           }
 
           .client__form__data {
-            display: flex;
-            align-items: start;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
             gap: 14px;
-            width: 830px;
+            width: 100%;
 
             .client__form__info {
               display: flex;
-              align-items: start;
               flex-direction: column;
               gap: 5px;
 
@@ -76,7 +84,7 @@
               }
 
               input {
-                width: 400px;
+                width: 100%;
                 height: 40px;
                 border-radius: 12px;
                 border: 1px solid #e9ecef;
@@ -92,26 +100,28 @@
           height: 2px;
           background: $white_dark;
           margin: 40px 0;
+          grid-column: span 2;
         }
 
         .client__form__right-bottom {
-          display: flex;
-          align-items: start;
+          display: grid;
+          grid-template-columns: auto 1fr;
           gap: 60px;
+          align-items: start;
 
           h2 {
             color: #020105;
             font-family: $golos_fonts;
             font-size: 16px;
             font-weight: 600;
-            width: 150px;
           }
 
           .client__form__info {
             display: flex;
-            align-items: start;
             flex-direction: column;
             gap: 8px;
+            margin-left: 100px;
+
 
             label {
               color: #020105;
@@ -124,7 +134,8 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
-              width: 408px;
+              width: 100%;
+              max-width: 448px;
               height: 40px;
               border-radius: 12px;
               border: 1px solid #e9ecef;
@@ -139,14 +150,15 @@
               font-size: 20px;
             }
           }
+
           .client__form-map {
             display: flex;
-            justify-content: start;
             flex-direction: column;
             gap: 14px;
 
             iframe {
-              width: 911px;
+              margin-left: 90px;
+              min-width: 911px;
               height: 350px;
               border-radius: 8px;
               border: 1px solid #ccc;
@@ -163,12 +175,13 @@
             .client__form-map-input {
               display: flex;
               align-items: center;
-              width: 911px;
+              width: 100%;
               height: 40px;
               border-radius: 12px;
               border: 1px solid #e9ecef;
               background: $white;
               gap: 8px;
+
               input {
                 width: 95%;
                 height: 100%;
