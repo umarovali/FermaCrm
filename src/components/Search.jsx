@@ -190,7 +190,7 @@ const SearchOrders = () => {
             </div>
           </div>
 
-          <Link to={"/couriers/couriers-add"} className="search__right">
+          <Link to={"/orders/orders-add"} className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
               {t("add")}

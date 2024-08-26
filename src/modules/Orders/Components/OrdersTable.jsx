@@ -3,7 +3,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import OrdersItem from "./OrdersItem";
-import OrdersFilter from "./OrdersFilter/OrdersFilter";
 import { StatusNew, StatusPaid, StatusDelivUnpaid, StatusAccepted } from "./Status/Status";
 
 export default function OrdersTble() {
@@ -12,7 +11,6 @@ export default function OrdersTble() {
     <section>
       <div className="container">
         <div className="table_bg">
-          <OrdersFilter />
           <table className="table">
             <thead>
               <tr>

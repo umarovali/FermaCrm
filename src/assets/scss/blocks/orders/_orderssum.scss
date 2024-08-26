@@ -1,0 +1,30 @@
+.order_sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px dashed $black;
+    margin-top: 20px;
+    border-width: 50%;
+
+    h3 {
+      color: #999;
+      font-family: $golos_fonts;
+      font-size: 16px;
+      font-weight: 400;
+
+      span {
+        color: #020105;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    h2 {
+      color: #020105;
+      font-family: $golos_fonts;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
