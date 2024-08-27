@@ -1,0 +1,38 @@
+.order_sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  
+    h3 {
+      color: #999;
+      font-family: $golos_fonts;
+      font-size: 16px;
+      font-weight: 400;
+      width: 220px;
+  
+      span {
+        color: #020105;
+        font-family: $golos_fonts;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  
+    .border_bottom {
+      width: 90%;
+      height: 1px;
+      border-bottom: 1px dashed black;
+      margin: 0 15px;
+      margin-top: 15px;
+    }
+  
+    h2 {
+      color: #020105;
+      font-family: $golos_fonts;
+      font-size: 16px;
+      font-weight: 600;
+      width: 200px;
+    }
+  }
+  

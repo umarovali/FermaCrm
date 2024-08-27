@@ -19,12 +19,12 @@ export default function UserItem({ id, name, tel, role, onDelete }) {  // onDele
         <td>{tel}</td>
         <td>{role}</td>
         <td>
-          <Link to={`/user/${id}/look`}>
+          <Link to="/user/user_look">
             <CardActionArea className="table_btn_eye">
               <FiEye className="table_icon" />
             </CardActionArea>
           </Link>
-          <Link to={`/user/${id}/edit`}>
+          <Link to="/user/user_edit">
             <CardActionArea className="table_btn_change">
               <LuPencil className="table_icon" />
             </CardActionArea>

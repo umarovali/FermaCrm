@@ -1,8 +1,9 @@
 import React from "react";
 import BackAdd from "../../../../components/Back/BackAdd";
 import { IoIosArrowDown } from "react-icons/io";
-import deleteIcon from "../../../../assets/icons/delete.svg";
 import OrderProductAddIcon from "../../../../assets/icons/order_add_btn.svg";
+import OrdersAddItem from "../../Components/OrdersAddItem";
+import OrdersSum from "../../Components/OrdersSum"
 
 export default function OrdersForm() {
   return (
@@ -15,51 +16,30 @@ export default function OrdersForm() {
           <div className="order_left">
             <div className="order_form_bg">
               <h2 className="order_fotm_title">Выбрать продукт</h2>
-              <div className="order_product">
-                <div className="orders_product__size">
-                  <h3>C1</h3>
-                  <IoIosArrowDown />
-                </div>
-
-                <div className="order_product_coun_sum">
-                  <div className="order_product_count">100</div>
-
-                  <p className="order_product_sum">2 000 000 сум</p>
-
-                  <img className="order_product_delete" src={deleteIcon} alt="delete icon" />
-                </div>
-              </div>
-              <div className="order_product">
-                <div className="orders_product__size">
-                  <h3>C1</h3>
-                  <IoIosArrowDown />
-                </div>
-
-                <div className="order_product_coun_sum">
-                  <div className="order_product_count">100</div>
-
-                  <p className="order_product_sum">2 000 000 сум</p>
-
-                  <img className="order_product_delete" src={deleteIcon} alt="delete icon" />
-                </div>
-              </div>
+              <OrdersAddItem name="C1" price="200 000"/>
+              <OrdersAddItem name="C2" price="200 000"/>
               <button className="order_product_btn">
                 <img src={OrderProductAddIcon} alt="" />
                 Добавить продукт
               </button>
             </div>
             <div className="order_form_bg">
-              <h2 className="order_fotm_title">Выбрать клиента
+              <h2 className="order_fotm_title">
+                Выбрать клиента
                 <div className="order_wrapper_client">
                   <div className="order_client">
-                    <label>Клиент <span>*</span></label>
+                    <label>
+                      Клиент <span>*</span>
+                    </label>
                     <div className="order_client_select">
                       <h3></h3>
                       <IoIosArrowDown />
                     </div>
                   </div>
                   <div className="order_client">
-                    <label>Курьер <span>*</span></label>
+                    <label>
+                      Курьер <span>*</span>
+                    </label>
                     <div className="order_client_select">
                       <h3></h3>
                       <IoIosArrowDown />
@@ -72,7 +52,11 @@ export default function OrdersForm() {
 
           <div className="order_right">
             <div className="order_form_bg">
-              <h2 className="order_fotm_title">Общая сумма</h2>
+              <h3 className="order_fotm_title">Общая сумма</h3>
+              <OrdersSum size="C1" piecessum="25 000" allsum="200 000"/>
+              <OrdersSum size="C2" piecessum="255 000" allsum="2000 000"/>
+              <div className="hr"></div>
+              <h2 className="order__total" >Общая сумма <span>2 000 000 сум</span> </h2>
             </div>
           </div>
         </div>

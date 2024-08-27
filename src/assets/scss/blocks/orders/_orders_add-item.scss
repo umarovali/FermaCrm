@@ -1,0 +1,109 @@
+.order_product {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    margin-top: 24px;
+
+    .order_product_coun_sum {
+      display: flex;
+      align-items: center;
+      min-width: 525px;
+      gap: 100px;
+    }
+
+    .orders_product__size {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 40px;
+      padding: 0px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--Dark-Grey-30, #e9ecef);
+      background: var(--White, #fff);
+
+      h3 {
+        color: #343a40;
+        font-family: $golos_fonts;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+
+    .order_product_count {
+      width: 161px;
+      border-radius: 10px;
+      border: 1px solid #ffe2b8;
+      background: #fff7ee;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s linear;
+
+      input {
+        font-size: 20px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        text-align: center;
+        color: $black;
+        outline: none;
+        font-weight: 500;
+        font-family: $golos_fonts;
+        background: transparent;
+
+        &[type="number"]::-webkit-outer-spin-button,
+        &[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &[type="number"] {
+          -moz-appearance: textfield;
+        }
+      }
+
+      .item_count_minus {
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      .item_count_plus {
+        border-radius: 0px 5px 5px 0px;
+      }
+
+      .item_count_plus,
+      .item_count_minus {
+        background: transparent;
+        color: $black;
+        height: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        cursor: pointer;
+        color: $black_light;
+        border: 0.111111px solid #ffe2b8;
+
+        &:hover {
+          background: #d3d3d3;
+        }
+      }
+    }
+
+    .order_product_sum {
+      color: var(--Black, #020105);
+      font-family: $golos_fonts;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+    }
+
+    .order_product_delete {
+      width: 24px;
+      height: 24px;
+    }
+  }

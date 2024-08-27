@@ -149,7 +149,7 @@ const SearchCouriers = () => {
             </div>
           </div>
 
-          <Link to={"/orders/order-add"} className="search__right">
+          <Link to={"/couriers/couriers-add"} className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
               {t("add")}
