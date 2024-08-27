@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { CardActionArea, Modal, Box } from "@mui/material";
 import { IoClose } from "react-icons/io5";
 import Delete from "../../assets/icons/delete.svg";
@@ -9,7 +9,7 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
   const handleClose = () => setOpen(false);
 
   const handleConfirmDelete = () => {
-    onDelete(id);
+    onDelete(id); 
     handleClose();
   };
 
@@ -37,11 +37,11 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
         <div className="modal_delete">
           <div className="modal_delete__header">
             <h4>{t("delete")}</h4>
-            <IoClose className='modal_close' onClick={handleClose} />
+            <IoClose className="modal_close" onClick={handleClose} />
           </div>
           <div className="modal_hr"></div>
           <div className="modal_delete__body">
-            <h2>{t("reallydelete")}"{name}"?</h2>
+            <h2>{t("reallydelete")} "{name}"?</h2>
             <div className="modal_delete__body-btns">
               <CardActionArea className="btns__1" onClick={handleClose}>
                 <img src={Cancel} alt="Cancel-icon" /> {t("cancel")}
