@@ -1,8 +1,8 @@
 import React from "react";
 import BackAdd from "../../../../components/Back/BackAdd";
 import { IoIosArrowDown } from "react-icons/io";
-import OrdersSum from "../../Components/OrdersSum";
-import OrdersProduct from "./OrdersProduct";
+import deleteIcon from "../../../../assets/icons/delete.svg";
+import OrderProductAddIcon from "../../../../assets/icons/order_add_btn.svg";
 
 export default function OrdersForm() {
   return (
@@ -11,41 +11,68 @@ export default function OrdersForm() {
         <div className="order_back_bg">
           <BackAdd />
         </div>
-        <div className="order_form__wrapper">
-          <div className="order_form__left">
-            <div className="order_form__left-top">
-              <h3>Выбрать продукт</h3>
-              <OrdersProduct />
-            </div>
-            <div className="order_form__left-bottom">
-              <h2>Выбрать клиента</h2>
-              <div className="select__wrapper">
-                <div className="select">
-                  <label>Клиент *</label>
-                  <div className="courier">
-                    <IoIosArrowDown className="courier_icon" />
-                  </div>
+        <div className="order_wrapper">
+          <div className="order_left">
+            <div className="order_form_bg">
+              <h2 className="order_fotm_title">Выбрать продукт</h2>
+              <div className="order_product">
+                <div className="orders_product__size">
+                  <h3>C1</h3>
+                  <IoIosArrowDown />
                 </div>
-                <div className="select">
-                  <label>Клиент *</label>
-                  <div className="courier">
-                    <IoIosArrowDown className="courier_icon" />
-                  </div>
+
+                <div className="order_product_coun_sum">
+                  <div className="order_product_count">100</div>
+
+                  <p className="order_product_sum">2 000 000 сум</p>
+
+                  <img className="order_product_delete" src={deleteIcon} alt="delete icon" />
                 </div>
               </div>
+              <div className="order_product">
+                <div className="orders_product__size">
+                  <h3>C1</h3>
+                  <IoIosArrowDown />
+                </div>
+
+                <div className="order_product_coun_sum">
+                  <div className="order_product_count">100</div>
+
+                  <p className="order_product_sum">2 000 000 сум</p>
+
+                  <img className="order_product_delete" src={deleteIcon} alt="delete icon" />
+                </div>
+              </div>
+              <button className="order_product_btn">
+                <img src={OrderProductAddIcon} alt="" />
+                Добавить продукт
+              </button>
+            </div>
+            <div className="order_form_bg">
+              <h2 className="order_fotm_title">Выбрать клиента
+                <div className="order_wrapper_client">
+                  <div className="order_client">
+                    <label>Клиент <span>*</span></label>
+                    <div className="order_client_select">
+                      <h3></h3>
+                      <IoIosArrowDown />
+                    </div>
+                  </div>
+                  <div className="order_client">
+                    <label>Курьер <span>*</span></label>
+                    <div className="order_client_select">
+                      <h3></h3>
+                      <IoIosArrowDown />
+                    </div>
+                  </div>
+                </div>
+              </h2>
             </div>
           </div>
-          <div className="order_form__right">
-            <div className="order_form__right-top">
-              <h3>Общая сумма</h3>
-              <OrdersSum size="C1" piecessum="25000" allsum="200 000" />
-              <OrdersSum size="C2" piecessum="15000" allsum="800 000" />
-              <div className="hr"></div>
-              <div className="order__total">
-                <h2>
-                  Общая сумма <span>2 000 000 сум</span>
-                </h2>
-              </div>
+
+          <div className="order_right">
+            <div className="order_form_bg">
+              <h2 className="order_fotm_title">Общая сумма</h2>
             </div>
           </div>
         </div>
