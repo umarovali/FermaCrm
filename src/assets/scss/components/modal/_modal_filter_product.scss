@@ -6,16 +6,19 @@
   }
 
   .filter_modal {
-    width: 554px;
-    height: 329px;
-    border-radius: 24px;
-    background: $white;
-    box-shadow: -6px 0px 16px 0px rgba(6, 22, 38, 0.07);
     z-index: 1000;
     position: absolute;
     left: -16px;
     top: 130%;
     display: initial;
+
+    &-product {
+      width: 554px;
+      height: 329px;
+      border-radius: 24px;
+      background: $white;
+      box-shadow: -6px 0px 16px 0px rgba(6, 22, 38, 0.07);
+    }
 
     .modal_header {
       padding: 24px;
@@ -77,7 +80,6 @@
           border: 1px solid #e9ecef;
           background: $white;
           padding-left: 20px;
-
         }
       }
     }
