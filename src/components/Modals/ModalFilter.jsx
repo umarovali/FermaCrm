@@ -30,34 +30,36 @@ const ModalFilterUser = ({ userModal, setUserModal }) => {
 
   return (
     <div className="filter_modal close_modal">
-      <div ref={modalRef} className="modal_content">
-        <div className="modal_header">
-          <h4 className="modal_title">Фильтр</h4>
-          <button onClick={handleCloseModal}>
-            <img src={Close} alt="Close" />
-          </button>
-        </div>
-        <div className="modal_hr"></div>
-        <div className="modal_body">
-          <div className="modal_role">
-            <p className="modal_role_text">Роль</p>
-            <select className="modal_role_choose">
-              <option value="admin">Администратор</option>
-              <option value="courier">Курьер</option>
-            </select>
+      <div className="filter_modal-user">
+        <div ref={modalRef} className="modal_content">
+          <div className="modal_header">
+            <h4 className="modal_title">Фильтр</h4>
+            <button onClick={handleCloseModal}>
+              <img src={Close} alt="Close" />
+            </button>
           </div>
-          <div className="modal_btns">
-            <CardActionArea
-              onClick={handleCloseModal}
-              className="modal_btn_canse"
-            >
-              <img src={CloseFilter} alt="Close filter" />
-              Отменить
-            </CardActionArea>
-            <CardActionArea className="modal_btn_filter">
-              <img src={Add} alt="add filter" />
-              Фильтровать
-            </CardActionArea>
+          <div className="modal_hr"></div>
+          <div className="modal_body">
+            <div className="modal_role">
+              <p className="modal_role_text">Роль</p>
+              <select className="modal_role_choose">
+                <option value="admin">Администратор</option>
+                <option value="courier">Курьер</option>
+              </select>
+            </div>
+            <div className="modal_btns">
+              <CardActionArea
+                onClick={handleCloseModal}
+                className="modal_btn_canse"
+              >
+                <img src={CloseFilter} alt="Close filter" />
+                Отменить
+              </CardActionArea>
+              <CardActionArea className="modal_btn_filter">
+                <img src={Add} alt="add filter" />
+                Фильтровать
+              </CardActionArea>
+            </div>
           </div>
         </div>
       </div>
@@ -90,39 +92,41 @@ const ModalFilterProduct = ({ userModal, setUserModal }) => {
 
   return (
     <div className="filter_modal close_modal">
-      <div ref={modalRef} className="modal_content">
-        <div className="modal_header">
-          <h4 className="modal_title">Фильтр</h4>
-          <button onClick={handleCloseModal}>
-            <img src={Close} alt="Close" />
-          </button>
-        </div>
-        <div className="modal_hr"></div>
-        <div className="modal_body">
-          <div className="modal_role-product">
-            <div className="modal_role-product-item">
-              <p>Цена (сом)</p>
-              <input type="number" placeholder="От" />
-              <input type="number" placeholder="До" />
-            </div>
-            <div className="modal_role-product-item">
-              <p>Количество</p>
-              <input type="number" placeholder="От" />
-              <input type="number" placeholder="До" />
-            </div>
+      <div className="filter_modal-product">
+        <div ref={modalRef} className="modal_content">
+          <div className="modal_header">
+            <h4 className="modal_title">Фильтр</h4>
+            <button onClick={handleCloseModal}>
+              <img src={Close} alt="Close" />
+            </button>
           </div>
-          <div className="modal_btns">
-            <CardActionArea
-              onClick={handleCloseModal}
-              className="modal_btn_canse"
-            >
-              <img src={CloseFilter} alt="Close filter" />
-              Отменить
-            </CardActionArea>
-            <CardActionArea className="modal_btn_filter">
-              <img src={Add} alt="add filter" />
-              Фильтровать
-            </CardActionArea>
+          <div className="modal_hr"></div>
+          <div className="modal_body">
+            <div className="modal_role-product">
+              <div className="modal_role-product-item">
+                <p>Цена (сом)</p>
+                <input type="number" placeholder="От" />
+                <input type="number" placeholder="До" />
+              </div>
+              <div className="modal_role-product-item">
+                <p>Количество</p>
+                <input type="number" placeholder="От" />
+                <input type="number" placeholder="До" />
+              </div>
+            </div>
+            <div className="modal_btns">
+              <CardActionArea
+                onClick={handleCloseModal}
+                className="modal_btn_canse"
+              >
+                <img src={CloseFilter} alt="Close filter" />
+                Отменить
+              </CardActionArea>
+              <CardActionArea className="modal_btn_filter">
+                <img src={Add} alt="add filter" />
+                Фильтровать
+              </CardActionArea>
+            </div>
           </div>
         </div>
       </div>
@@ -155,33 +159,35 @@ const ModalFilterClient = ({ userModal, setUserModal }) => {
 
   return (
     <div className="filter_modal close_modal">
-      <div ref={modalRef} className="modal_content">
-        <div className="modal_header">
-          <h4 className="modal_title">Фильтр</h4>
-          <button onClick={handleCloseModal}>
-            <img src={Close} alt="Close" />
-          </button>
-        </div>
-        <div className="modal_hr"></div>
-        <div className="modal_body">
-          <div className="modal_role">
-            <p className="modal_role_text">Курьер</p>
-            <select className="modal_role_choose">
-              <option value="courier">Курьер</option>
-            </select>
+      <div className="filter_modal-user">
+        <div ref={modalRef} className="modal_content">
+          <div className="modal_header">
+            <h4 className="modal_title">Фильтр</h4>
+            <button onClick={handleCloseModal}>
+              <img src={Close} alt="Close" />
+            </button>
           </div>
-          <div className="modal_btns">
-            <CardActionArea
-              onClick={handleCloseModal}
-              className="modal_btn_canse"
-            >
-              <img src={CloseFilter} alt="Close filter" />
-              Отменить
-            </CardActionArea>
-            <CardActionArea className="modal_btn_filter">
-              <img src={Add} alt="add filter" />
-              Фильтровать
-            </CardActionArea>
+          <div className="modal_hr"></div>
+          <div className="modal_body">
+            <div className="modal_role">
+              <p className="modal_role_text">Курьер</p>
+              <select className="modal_role_choose">
+                <option value="courier">Курьер</option>
+              </select>
+            </div>
+            <div className="modal_btns">
+              <CardActionArea
+                onClick={handleCloseModal}
+                className="modal_btn_canse"
+              >
+                <img src={CloseFilter} alt="Close filter" />
+                Отменить
+              </CardActionArea>
+              <CardActionArea className="modal_btn_filter">
+                <img src={Add} alt="add filter" />
+                Фильтровать
+              </CardActionArea>
+            </div>
           </div>
         </div>
       </div>
@@ -214,55 +220,57 @@ const ModalFilterOrder = ({ userModal, setUserModal }) => {
 
   return (
     <div className="filter_modal close_modal">
-      <div ref={modalRef} className="modal_content">
-        <div className="modal_header">
-          <h4 className="modal_title">Фильтр</h4>
-          <button onClick={handleCloseModal}>
-            <img src={Close} alt="Close" />
-          </button>
-        </div>
-        <div className="modal_hr"></div>
-        <div className="modal_body-order">
-          <div className="modal_role">
-            <div className="modal_role-form">
-              <p className="modal_role_text">Роль</p>
-              <select className="modal_role_choose">
-                <option value="admin">Администратор</option>
-                <option value="courier">Курьер</option>
-              </select>
-            </div>
-            <div className="modal_role-form">
-              <p className="modal_role_text">Курьер</p>
-              <select className="modal_role_choose">
-                <option value="admin">Администратор</option>
-                <option value="courier">Курьер</option>
-              </select>
-            </div>
-            <div className="modal_role-product-order">
-              <div className="modal_role-product-order-item">
-                <p>Цена (сом)</p>
-                <input type="number" placeholder="От" />
-                <input type="number" placeholder="До" />
-              </div>
-              <div className="modal_role-product-order-item">
-                <p>Количество</p>
-                <input type="number" placeholder="От" />
-                <input type="number" placeholder="До" />
-              </div>
-            </div>
+      <div className="filter_modal-order">
+        <div ref={modalRef} className="modal_content">
+          <div className="modal_header">
+            <h4 className="modal_title">Фильтр</h4>
+            <button onClick={handleCloseModal}>
+              <img src={Close} alt="Close" />
+            </button>
           </div>
-          <div className="modal_btns">
-            <CardActionArea
-              onClick={handleCloseModal}
-              className="modal_btn_canse"
-            >
-              <img src={CloseFilter} alt="Close filter" />
-              Отменить
-            </CardActionArea>
-            <CardActionArea className="modal_btn_filter">
-              <img src={Add} alt="add filter" />
-              Фильтровать
-            </CardActionArea>
+          <div className="modal_hr"></div>
+          <div className="modal_body-order">
+            <div className="modal_role">
+              <div className="modal_role-form">
+                <p className="modal_role_text">Роль</p>
+                <select className="modal_role_choose">
+                  <option value="admin">Администратор</option>
+                  <option value="courier">Курьер</option>
+                </select>
+              </div>
+              <div className="modal_role-form">
+                <p className="modal_role_text">Курьер</p>
+                <select className="modal_role_choose">
+                  <option value="admin">Администратор</option>
+                  <option value="courier">Курьер</option>
+                </select>
+              </div>
+              <div className="modal_role-product-order">
+                <div className="modal_role-product-order-item">
+                  <p>Цена (сом)</p>
+                  <input type="number" placeholder="От" />
+                  <input type="number" placeholder="До" />
+                </div>
+                <div className="modal_role-product-order-item">
+                  <p>Количество</p>
+                  <input type="number" placeholder="От" />
+                  <input type="number" placeholder="До" />
+                </div>
+              </div>
+            </div>
+            <div className="modal_btns">
+              <CardActionArea
+                onClick={handleCloseModal}
+                className="modal_btn_canse"
+              >
+                <img src={CloseFilter} alt="Close filter" />
+                Отменить
+              </CardActionArea>
+              <CardActionArea className="modal_btn_filter">
+                <img src={Add} alt="add filter" />
+                Фильтровать
+              </CardActionArea>
+            </div>
           </div>
         </div>
       </div>
