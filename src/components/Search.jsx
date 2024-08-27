@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import toggle from "../assets/icons/toggle.svg";
 import { IoMdAddCircleOutline } from "react-icons/io";
-import { CardActionArea } from '@mui/material';
+import { CardActionArea } from "@mui/material";
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import ModalFilter from "./Modals/ModalFilter";
+import { ModalFilterUser, ModalFilterProduct, ModalFilterClient, ModalFilterOrder } from "./Modals/ModalFilter";
 import { useTranslation } from "react-i18next";
 
 const SearchUser = () => {
@@ -25,11 +25,14 @@ const SearchUser = () => {
               <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
-              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+              <CardActionArea
+                className="search_filter_btn"
+                onClick={handleOpenModal}
+              >
                 <img src={toggle} alt="icon" />
                 {t("filter")}
               </CardActionArea>
-              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+              <ModalFilterUser userModal={userModal} setUserModal={setUserModal} />
             </div>
           </div>
 
@@ -43,7 +46,7 @@ const SearchUser = () => {
       </div>
     </section>
   );
-}
+};
 
 const SearchProduct = () => {
   const [userModal, setUserModal] = useState(false);
@@ -52,7 +55,6 @@ const SearchProduct = () => {
   };
 
   const { t } = useTranslation();
-
 
   return (
     <section>
@@ -64,11 +66,14 @@ const SearchProduct = () => {
               <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
-              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+              <CardActionArea
+                className="search_filter_btn"
+                onClick={handleOpenModal}
+              >
                 <img src={toggle} alt="icon" />
                 {t("filter")}
               </CardActionArea>
-              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+              <ModalFilterProduct userModal={userModal} setUserModal={setUserModal} />
             </div>
           </div>
 
@@ -82,8 +87,7 @@ const SearchProduct = () => {
       </div>
     </section>
   );
-}
-
+};
 
 const SearchClient = () => {
   const [userModal, setUserModal] = useState(false);
@@ -92,7 +96,6 @@ const SearchClient = () => {
   };
 
   const { t } = useTranslation();
-
 
   return (
     <section>
@@ -104,11 +107,14 @@ const SearchClient = () => {
               <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
-              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+              <CardActionArea
+                className="search_filter_btn"
+                onClick={handleOpenModal}
+              >
                 <img src={toggle} alt="icon" />
                 {t("filter")}
               </CardActionArea>
-              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+              <ModalFilterClient userModal={userModal} setUserModal={setUserModal} />
             </div>
           </div>
 
@@ -122,7 +128,7 @@ const SearchClient = () => {
       </div>
     </section>
   );
-}
+};
 
 const SearchCouriers = () => {
   const [userModal, setUserModal] = useState(false);
@@ -132,7 +138,6 @@ const SearchCouriers = () => {
 
   const { t } = useTranslation();
 
-
   return (
     <section>
       <div className="container">
@@ -141,13 +146,6 @@ const SearchCouriers = () => {
             <div className="search__input">
               <FiSearch className="search__icon" />
               <input type="text" placeholder={t("search")} />
-            </div>
-            <div className="search_wrapper_modal">
-              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
-                <img src={toggle} alt="icon" />
-                {t("filter")}
-              </CardActionArea>
-              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
             </div>
           </div>
 
@@ -161,7 +159,7 @@ const SearchCouriers = () => {
       </div>
     </section>
   );
-}
+};
 
 const SearchOrders = () => {
   const [userModal, setUserModal] = useState(false);
@@ -170,7 +168,6 @@ const SearchOrders = () => {
   };
 
   const { t } = useTranslation();
-
 
   return (
     <section>
@@ -182,11 +179,14 @@ const SearchOrders = () => {
               <input type="text" placeholder={t("search")} />
             </div>
             <div className="search_wrapper_modal">
-              <CardActionArea className="search_filter_btn" onClick={handleOpenModal}>
+              <CardActionArea
+                className="search_filter_btn"
+                onClick={handleOpenModal}
+              >
                 <img src={toggle} alt="icon" />
                 {t("filter")}
               </CardActionArea>
-              <ModalFilter userModal={userModal} setUserModal={setUserModal} />
+              <ModalFilterOrder userModal={userModal} setUserModal={setUserModal} />
             </div>
           </div>
 
@@ -200,6 +200,12 @@ const SearchOrders = () => {
       </div>
     </section>
   );
-}
+};
 
-export { SearchUser, SearchProduct, SearchClient, SearchCouriers, SearchOrders };
+export {
+  SearchUser,
+  SearchProduct,
+  SearchClient,
+  SearchCouriers,
+  SearchOrders,
+};
