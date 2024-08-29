@@ -17,18 +17,18 @@
   form {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 60px; 
+    gap: 60px;
     padding: 41px 24px;
 
     .user__form__wrapper {
-      display: contents; 
+      display: contents;
 
       .user__form__left {
-        grid-column: 1; 
+        grid-column: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%; 
+        width: 100%;
 
         img {
           width: 200px;
@@ -48,9 +48,9 @@
       }
 
       .user__form__right {
-        grid-column: 2; 
+        grid-column: 2;
         display: grid;
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
 
         .user__form__right-top {
           display: grid;
@@ -100,7 +100,7 @@
           height: 2px;
           background: $white_dark;
           margin: 40px 0;
-          grid-column: span 2; 
+          grid-column: span 2;
         }
 
         .user__form__right-bottom {

@@ -1,48 +1,54 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: $body_colors;
+  background: $body_colors;
 }
 
 li,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 button {
-    border: none;
+  border: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input {
-    outline: none;
+  outline: none;
 }
-
 
 // container
 
 .container {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding-right: 24px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-right: 24px;
 }
-
 
 // routes
 
-.routes{
-    width: 100%;
+.routes {
+  width: 100%;
 }
 
 .home {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .home {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }

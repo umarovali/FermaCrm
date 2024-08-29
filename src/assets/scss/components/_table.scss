@@ -7,12 +7,19 @@
   margin-top: 24px;
   min-height: 464px;
 
+  .table_container {
+    width: 100%;
+    overflow-x: auto; // Enables horizontal scrolling on smaller screens
+  }
+
   .table {
     width: 100%;
+    min-width: 900px; // Ensures the table has a minimum width for better scrolling
 
     .table_btn_eye,
     .table_btn_change,
-    .table_btn_delete {
+    .table_btn_delete,
+    .table_btn_save {
       width: 28px;
       height: 28px;
       display: flex;
@@ -37,6 +44,10 @@
       color: #ff0000;
     }
 
+    .table_btn_save {
+      background: #E2F5E4;
+    }
+
     thead {
       width: 100%;
 
@@ -46,6 +57,7 @@
         display: flex;
         align-items: center;
         background-color: $orang;
+        justify-content: space-between;
         border-radius: 8px;
         padding: 0 16px;
 
@@ -59,6 +71,7 @@
           text-align: left;
           font-weight: 400;
           font-size: 16px;
+
 
           .th_icon {
             font-size: 19px;
@@ -74,7 +87,25 @@
 
           &:nth-child(7) {
             max-width: 236px;
-            padding-right: 16px;
+            padding-right: 26px;
+          }
+        }
+      }
+
+      @media (max-width: 1400px) {
+        tr {
+          gap: 10px;
+
+          th {
+            font-size: 15px;
+          }
+        }
+      }
+      @media (max-width: 1200px) {
+        tr {
+          gap: 15px;
+          th {
+            font-size: 13px;
           }
         }
       }
@@ -85,11 +116,12 @@
 
       tr {
         width: 100%;
-        height: 39px;
+        gap: 10px;
+        padding: 5px 5px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         background-color: transparent;
-        padding: 0 16px;
         border-bottom: 1px solid #e5e5e5;
 
         td {
@@ -99,9 +131,13 @@
           text-align: left;
           font-weight: 400;
           font-size: 16px;
+          overflow: hidden; /* Hide overflow text */
+          text-overflow: ellipsis; /* Add ellipsis for overflow text */
+          white-space: nowrap;
 
           &:nth-child(1) {
             max-width: 48px;
+            padding-left: 16px;
           }
 
           &:nth-last-child(1) {
@@ -113,7 +149,33 @@
           }
           &:nth-child(7) {
             max-width: 236px;
-            padding-right: 16px;
+            padding-right: 18px;
+          }
+
+          &:nth-child(8) {
+            max-width: 120px;
+          }
+        }
+      }
+
+      @media (max-width: 1400px) {
+        tr {
+          height: 45px;
+          gap: 10px;
+
+          td {
+            font-size: 14px;
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        tr {
+          height: 40px;
+          gap: 15px;
+
+          td {
+            font-size: 13px;
           }
         }
       }
