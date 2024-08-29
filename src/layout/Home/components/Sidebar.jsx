@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarItem from "./SidebarItem";
-// react icons
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiBuilding2Line } from "react-icons/ri";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlinePostAdd } from "react-icons/md";
-// import img
 import Logo from "../../../assets/images/logo.svg";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar ${isOpen ? "active" : ""}`}>
       <Link to="/user">
         <img src={Logo} alt="Logo site" />
       </Link>
       <p className="sidebar_menu">{t("menu")}</p>
 
-      <ul className="sidebar_list">
+      <ul className={`sidebar_list ${isOpen ? "open" : ""}`}>
         <SidebarItem link="/user" Icon={RiBuilding2Line} text={t("users")} />
         <SidebarItem
           link="/products"
@@ -44,6 +47,12 @@ export default function Sidebar() {
           text={t("orders")}
         />
       </ul>
+
+      <div className="hamburger-menu" onClick={toggleSidebar}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
     </nav>
   );
 }
