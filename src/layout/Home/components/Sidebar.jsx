@@ -14,7 +14,7 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (
@@ -48,7 +48,10 @@ export default function Sidebar() {
         />
       </ul>
 
-      <div className="hamburger-menu" onClick={toggleSidebar}>
+      <div
+        className={`hamburger-menu ${isOpen ? "open" : ""}`}
+        onClick={toggleSidebar}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>

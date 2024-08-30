@@ -17,6 +17,7 @@
     flex-direction: column;
     gap: 24px;
     padding-top: 24px;
+    transition: all 0.5s ease;
   }
 
   .sidebar_item a {
@@ -56,36 +57,37 @@
   .hamburger-menu {
     display: none;
 
+    &.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, -3px);
+      background-color: $black;
+    }
+
+    &.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, 4px);
+      background-color: $black;
+    }
+
+    &:hover {
+      .bar {
+        background-color: $black;
+      }
+    }
+
     .bar {
       width: 100%;
       height: 3px;
       background-color: $black;
-      margin: 4px 0;
+      border-radius: 2px;
       transition: all 0.4s ease;
-    }
-  }
+      transform-origin: 5px;
 
-  &.active {
-    .hamburger-menu {
-      .bar:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
-        background: #000;
+      &:nth-child(2) {
+        transition: width 0.3s ease;
       }
-
-      .bar:nth-child(2) {
-        opacity: 0;
-        background: #000;
-      }
-
-      .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-        background: #000;
-      }
-    }
-
-    .sidebar_list {
-      opacity: 1;
-    //   visibility: visible;
     }
   }
 }
@@ -99,12 +101,16 @@
 
     .sidebar_list {
       display: none;
-      position: absolute;
-      top: 50px;
+      position: fixed;
+      top: 0;
       left: 0;
-      width: 100%;
+      width: 25%;
+      height: 100%;
       background-color: $white;
       z-index: 1000;
+      padding: 60px 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
     }
 
     .sidebar_menu {
@@ -124,8 +130,9 @@
 
     &.active .sidebar_list {
       display: flex;
-      align-items: end;
-      margin-top: 30px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 50px;
     }
 
     &.active .hamburger-menu .bar {
