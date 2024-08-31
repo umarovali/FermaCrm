@@ -182,3 +182,191 @@
     }
   }
 }
+
+// table_orders
+
+.table_bg {
+  width: 100%;
+  border-radius: 24px;
+  background: $white;
+  box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+  padding: 24px;
+  margin-top: 24px;
+  min-height: 464px;
+
+  .table_container {
+    width: 100%;
+    overflow-x: auto; // Enables horizontal scrolling on smaller screens
+  }
+
+  .table {
+    width: 100%;
+    min-width: 900px; // Ensures the table has a minimum width for better scrolling
+
+    .table_btn_eye,
+    .table_btn_change,
+    .table_btn_delete,
+    .table_btn_save {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 19px;
+    }
+
+    .table_btn_eye {
+      background: #e6eef8;
+      color: $blue;
+    }
+
+    .table_btn_change {
+      background: #fff8ee;
+      color: $orang;
+    }
+
+    .table_btn_delete {
+      background: #ffe6e6;
+      color: #ff0000;
+    }
+
+    .table_btn_save {
+      background: #E2F5E4;
+    }
+
+    thead {
+      width: 100%;
+
+      tr {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: $orang;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding: 0 16px;
+
+        th {
+          color: $black;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-family: $golos_fonts;
+          width: 100%;
+          text-align: left;
+          font-weight: 400;
+          font-size: 16px;
+
+
+          .th_icon {
+            font-size: 19px;
+          }
+
+          &:nth-child(1) {
+            max-width: 48px;
+          }
+
+          &:nth-last-child(1) {
+            max-width: 100px;
+          }
+
+          &:nth-child(7) {
+            max-width: 236px;
+            padding-right: 26px;
+          }
+        }
+      }
+
+      @media (max-width: 1400px) {
+        tr {
+          gap: 10px;
+
+          th {
+            font-size: 15px;
+          }
+        }
+      }
+      @media (max-width: 1200px) {
+        tr {
+          gap: 15px;
+          th {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      width: 100%;
+
+      .table_orders {
+        width: 100%;
+        gap: 10px;
+        padding: 5px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        border-bottom: 1px solid #e5e5e5;
+
+        td {
+          color: $black;
+          font-family: $golos_fonts;
+          width: 100%;
+          max-width: 290px;
+          text-align: left;
+          font-weight: 400;
+          font-size: 16px;
+          overflow: hidden; /* Hide overflow text */
+          text-overflow: ellipsis; /* Add ellipsis for overflow text */
+          white-space: nowrap;
+
+          &:nth-child(1) {
+            max-width: 48px;
+            padding-left: 16px;
+          }
+
+          &:nth-last-child(1) {
+            max-width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+          }
+          &:nth-child(7) {
+            max-width: 236px;
+            padding-right: 18px;
+          }
+
+          &:nth-child(8) {
+            max-width: 120px;
+          }
+        }
+      }
+
+      @media (max-width: 1400px) {
+        tr {
+          height: 45px;
+          gap: 10px;
+
+          td {
+            font-size: 14px;
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        tr {
+          height: 40px;
+          gap: 15px;
+
+          td {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

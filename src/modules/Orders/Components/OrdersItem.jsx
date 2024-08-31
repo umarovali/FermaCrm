@@ -22,7 +22,7 @@ export default function OrdersItem({
 
   return (
     <>
-      <tr>
+      <tr className="table_orders">
         <td>{id}</td>
         <td>{num_id}</td>
         <td>{sum}</td>
