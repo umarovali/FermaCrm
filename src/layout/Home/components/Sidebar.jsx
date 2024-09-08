@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SidebarItem from "./SidebarItem";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiBuilding2Line } from "react-icons/ri";
@@ -12,13 +12,30 @@ import { Link } from "react-router-dom";
 export default function Sidebar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const sidebarRef = useRef(null);
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className={`sidebar ${isOpen ? "active" : ""}`}>
+    <nav
+      ref={sidebarRef}
+      className={`sidebar ${isOpen ? "active" : ""}`}
+    >
       <Link to="/user">
         <img src={Logo} alt="Logo site" />
       </Link>

@@ -30,7 +30,7 @@ const SearchUser = () => {
                 onClick={handleOpenModal}
               >
                 <img src={toggle} alt="icon" />
-                {t("filter")}
+                  <p>{t("filter")}</p>
               </CardActionArea>
               <ModalFilterUser userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -39,7 +39,7 @@ const SearchUser = () => {
           <Link to="/user/user_add" className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              {t("add")}
+             <p> {t("add")}</p>
             </CardActionArea>
           </Link>
         </div>
@@ -71,7 +71,7 @@ const SearchProduct = () => {
                 onClick={handleOpenModal}
               >
                 <img src={toggle} alt="icon" />
-                {t("filter")}
+                  <p>{t("filter")}</p>
               </CardActionArea>
               <ModalFilterProduct userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -80,7 +80,7 @@ const SearchProduct = () => {
           <Link to="/products/product-add" className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              {t("add")}
+              <p>{t("add")}</p>
             </CardActionArea>
           </Link>
         </div>
@@ -112,7 +112,7 @@ const SearchClient = () => {
                 onClick={handleOpenModal}
               >
                 <img src={toggle} alt="icon" />
-                {t("filter")}
+                  <p>{t("filter")}</p>
               </CardActionArea>
               <ModalFilterClient userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -121,7 +121,7 @@ const SearchClient = () => {
           <Link to={"/clients/client-add"} className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              {t("add")}
+             <p> {t("add")}</p>
             </CardActionArea>
           </Link>
         </div>
@@ -152,7 +152,7 @@ const SearchCouriers = () => {
           <Link to={"/couriers/couriers-add"} className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              {t("add")}
+             <p> {t("add")}</p>
             </CardActionArea>
           </Link>
         </div>
@@ -184,7 +184,7 @@ const SearchOrders = () => {
                 onClick={handleOpenModal}
               >
                 <img src={toggle} alt="icon" />
-                {t("filter")}
+                  {t("filter")}
               </CardActionArea>
               <ModalFilterOrder userModal={userModal} setUserModal={setUserModal} />
             </div>
@@ -193,7 +193,7 @@ const SearchOrders = () => {
           <Link to={"/orders/orders-add"} className="search__right">
             <CardActionArea className="add__btn">
               <IoMdAddCircleOutline className="add__icon" />
-              {t("add")}
+              <p>{t("add")}</p>
             </CardActionArea>
           </Link>
         </div>

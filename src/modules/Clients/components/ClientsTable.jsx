@@ -93,8 +93,8 @@ export default function ClientsTable() {
                 />
               </tbody>
             </table>
-            <PaginationTable />
           </div>
+          <PaginationTable />
         </div>
       </div>
     </section>

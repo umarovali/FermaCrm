@@ -81,8 +81,8 @@ export default function UserTable() {
                 />
               </tbody>
             </table>
-            <PaginationTable />
           </div>
+          <PaginationTable />
         </div>
       </div>
     </section>

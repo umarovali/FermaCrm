@@ -1,6 +1,6 @@
 .sidebar {
-  width: 320px;
-  padding: 13px 24px 0px 24px;
+  min-width: 220px;
+  padding: 13px 24px 0;
   position: relative;
 
   .sidebar_menu {
@@ -20,37 +20,39 @@
     transition: all 0.5s ease;
   }
 
-  .sidebar_item a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  .sidebar_item {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
-    &.active {
-      .item_icon,
-      .item_text {
-        color: $blue;
+      &.active {
+        .item_icon,
+        .item_text {
+          color: $blue;
+        }
       }
-    }
 
-    &:hover {
-      .item_icon,
-      .item_text {
-        color: $blue;
+      &:hover {
+        .item_icon,
+        .item_text {
+          color: $blue;
+        }
       }
-    }
 
-    .item_icon {
-      font-size: 22px;
-      color: $gray_light;
-      transition: 0.3s linear;
-    }
+      .item_icon {
+        font-size: 22px;
+        color: $gray_light;
+        transition: 0.3s linear;
+      }
 
-    .item_text {
-      color: $gray;
-      font-family: $golos_fonts;
-      font-size: 14px;
-      font-weight: 400;
-      transition: 0.3s linear;
+      .item_text {
+        color: $gray;
+        font-family: $golos_fonts;
+        font-size: 14px;
+        font-weight: 400;
+        transition: 0.3s linear;
+      }
     }
   }
 
@@ -71,10 +73,8 @@
       background-color: $black;
     }
 
-    &:hover {
-      .bar {
-        background-color: $black;
-      }
+    &:hover .bar {
+      background-color: $black;
     }
 
     .bar {
@@ -92,6 +92,7 @@
   }
 }
 
+// Responsive Styles
 @media (max-width: 900px) {
   .sidebar {
     display: flex;
@@ -104,7 +105,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 25%;
+      max-width: 25%;
       height: 100%;
       background-color: $white;
       z-index: 1000;
@@ -138,5 +139,21 @@
     &.active .hamburger-menu .bar {
       background-color: $black;
     }
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar_list {
+    max-width: 45% !important;
+    padding: 80px 30px;
+
+  }
+}
+
+@media (max-width: 350px) {
+  .sidebar_list {
+    max-width: 55% !important;
+    padding: 80px 30px;
+
   }
 }

@@ -22,7 +22,7 @@ export default function OrdersItem({
 
   return (
     <>
-      <tr>
+      <tr className="table_orders">
         <td>{id}</td>
         <td>{num_id}</td>
         <td>{sum}</td>
@@ -43,7 +43,7 @@ export default function OrdersItem({
           </Link>
           <CardActionArea className="table_btn_save" onClick={handleOpen}>
             <img src={save} alt="save" />
-          </CardActionArea>{" "}
+          </CardActionArea>
           <CardActionArea className="table_btn_delete" onClick={handleOpen}>
             <RiDeleteBinLine className="table_icon" />
           </CardActionArea>
