@@ -81,8 +81,8 @@ export default function CouriersTable() {
                 />
               </tbody>
             </table>
-            <PaginationTable />
           </div>
+            <PaginationTable />
         </div>
       </div>
     </section>
