@@ -20,7 +20,7 @@ export default function Login() {
             <form>
               <label>Логин</label>
               <input type="text" />
-              <label>Логин</label>
+              <label>Пароль</label>
               <input type="text" />
               <button>Вход</button>
             </form>
