@@ -10,7 +10,7 @@ export default function ProductFormLook() {
       <div className="container">
         <div className="product_bg">
           <div className="product_back">
-            <BackLook/>
+            <BackLook />
           </div>
           <div className="product_form">
             <h2 className='product_form_title'>{t("productdata")}</h2>
@@ -18,15 +18,15 @@ export default function ProductFormLook() {
             <form className='product_form_wrapper'>
               <div className='product_form_item'>
                 <label className='product_form_label'>{t("name")} <span>*</span></label>
-                <input className='product_form_input' type="text" />
+                <div className="product_form_input_bg"></div>
               </div>
               <div className='product_form_item'>
                 <label className='product_form_label'>{t("quantity")} <span>*</span></label>
-                <input className='product_form_input' type="text" />
+                <div className="product_form_input_bg"></div>
               </div>
               <div className='product_form_item'>
                 <label className='product_form_label'>{t("price")} (сом) <span>*</span></label>
-                <input className='product_form_input' type="text" />
+                <div className="product_form_input_bg"></div>
               </div>
             </form>
           </div>

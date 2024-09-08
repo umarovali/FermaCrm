@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 // icons
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
-import User from "../../../../assets/images/user.svg"; 
+import User from "../../../../assets/images/user.svg";
 import BackAdd from "../../../../components/Back/BackAdd";
 
 export default function UserForm() {
@@ -18,7 +18,7 @@ export default function UserForm() {
   };
 
   const handleImageClick = () => {
-    fileInputRef.current.click(); 
+    fileInputRef.current.click();
   };
 
   const { t } = useTranslation();
@@ -33,20 +33,18 @@ export default function UserForm() {
           <form>
             <div className="user__form__wrapper">
               <div className="user__form__left">
-                <img 
-                  src={selectedImage || User} 
-                  alt="user" 
-                  onClick={handleImageClick} 
-                  style={{ cursor: "pointer" }}
+                <img
+                  src={selectedImage || User}
+                  alt="user"
+                  onClick={handleImageClick}
                 />
                 <input
                   type="file"
                   accept="image/*"
                   ref={fileInputRef}
                   onChange={handleImageChange}
-                  style={{ display: "none" }} 
                 />
-                <h4 onClick={handleImageClick} style={{ cursor: "pointer" }}>{t("edit")}</h4>
+                <h4 onClick={handleImageClick}></h4>
               </div>
               <div className="user__form__right">
                 <div className="user__form__right-top">

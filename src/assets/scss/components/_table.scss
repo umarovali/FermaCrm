@@ -72,7 +72,6 @@
           font-weight: 400;
           font-size: 16px;
 
-
           .th_icon {
             font-size: 19px;
           }
@@ -97,13 +96,15 @@
           gap: 10px;
 
           th {
-            font-size: 15px;
+            font-size: 13px;
           }
         }
       }
-      @media (max-width: 1200px) {
+
+      @media (max-width: 1400px) {
         tr {
-          gap: 15px;
+          gap: 10px;
+
           th {
             font-size: 13px;
           }
@@ -131,9 +132,13 @@
           text-align: left;
           font-weight: 400;
           font-size: 16px;
-          overflow: hidden; /* Hide overflow text */
-          text-overflow: ellipsis; /* Add ellipsis for overflow text */
+          overflow: hidden;
+          /* Hide overflow text */
+          text-overflow: ellipsis;
+          /* Add ellipsis for overflow text */
           white-space: nowrap;
+          max-width: 250px;
+
 
           &:nth-child(1) {
             max-width: 48px;
@@ -147,6 +152,7 @@
             justify-content: center;
             gap: 5px;
           }
+
           &:nth-child(7) {
             max-width: 236px;
             padding-right: 18px;

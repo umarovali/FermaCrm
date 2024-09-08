@@ -26,7 +26,6 @@ export default function OrdersTble() {
                 </tr>
               </thead>
               <tbody>
-                <OrdersItem id={1} num_id="Janibek MaxatovMaxatovMaxatovMaxatov" sum="25 000000000000000000000" paid="20 000" remainder="5000" client="Janibek MaxatovMaxatovMaxatovMaxatov" status={<StatusNew />} />
                 <OrdersItem id={2} num_id="Janibek Maxatov" sum="25 000" paid="20 000" remainder="5000" client="Janibek Maxatov" status={<StatusPaid />} />
                 <OrdersItem id={3} num_id="Janibek Maxatov" sum="25 000" paid="20 000" remainder="5000" client="Janibek Maxatov" status={<StatusPaid />} />
                 <OrdersItem id={4} num_id="Janibek Maxatov" sum="25 000" paid="20 000" remainder="5000" client="Janibek Maxatov" status={<StatusPaid />} />

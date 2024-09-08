@@ -1,0 +1,153 @@
+.user__form {
+    width: 100%;
+    height: 874px;
+    border-radius: 24px;
+    background: $white;
+    box-shadow: 1px 0px 32px -4px rgba(17, 17, 17, 0.08);
+
+    .user__form__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        height: 96px;
+        border-bottom: 1px solid $white_dark;
+    }
+
+    form {
+        display: flex;
+        gap: 60px;
+        padding: 41px 24px;
+
+        .user__form__wrapper {
+            display: contents;
+
+            .user__form__left {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 200px;
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 16px;
+                    object-fit: contain;
+                    cursor: pointer;
+                }
+
+                h4 {
+                    color: $blue;
+                    text-align: center;
+                    font-family: $golos_fonts;
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-top: 14px;
+                }
+            }
+
+            .user__form__right {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr;
+
+                .user__form__right-top {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: 60px;
+                    align-items: start;
+
+                    h2 {
+                        color: #020105;
+                        font-family: Golos;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+
+                    .user__form__data {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
+                        gap: 14px;
+                        width: 100%;
+
+                        .user__form__info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            label {
+                                color: #020105;
+                                font-family: $golos_fonts;
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+
+                            .user_look_bg {
+                                width: 100%;
+                                height: 40px;
+                                border-radius: 12px;
+                                border: 1px solid #e9ecef;
+                                background: #F5F5F5;
+                                padding-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .hr {
+                    width: 100%;
+                    height: 2px;
+                    background: $white_dark;
+                    margin: 40px 0;
+                    grid-column: span 2;
+                }
+
+                .user__form__right-bottom {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: 60px;
+                    align-items: start;
+
+                    h2 {
+                        color: #020105;
+                        font-family: $golos_fonts;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+
+                    .user__form__info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        label {
+                            color: #020105;
+                            font-family: $golos_fonts;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+
+                        .form__right__select_bg {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            height: 40px;
+                            border-radius: 12px;
+                            border: 1px solid #e9ecef;
+                            background: #E9ECEF;
+                            padding: 0 12px;
+                            font-family: $golos_fonts;
+                            font-size: 14px;
+                            color: $gray;
+                        }
+
+                        .form__right__icon {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

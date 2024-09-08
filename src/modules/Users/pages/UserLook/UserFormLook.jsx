@@ -2,14 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 // icons
-import { FaArrowLeftLong } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
 
 export default function UserFormLook() {
-  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -25,9 +23,7 @@ export default function UserFormLook() {
                 <img
                   src={User}
                   alt="user"
-                  style={{ cursor: "pointer" }}
                 />
-                <h4 style={{ cursor: "pointer" }}>{t("edit")}</h4>
               </div>
               <div className="user__form__right">
                 <div className="user__form__right-top">
@@ -35,15 +31,15 @@ export default function UserFormLook() {
                   <div className="user__form__data">
                     <div className="user__form__info">
                       <label>{t("fullname")}</label>
-                      <input type="text" />
+                      <div className="user_look_bg"></div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("phonenumber")}</label>
-                      <input type="text" placeholder="+996" />
+                      <div className="user_look_bg"></div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("password")}</label>
-                      <input type="password" />
+                      <div className="user_look_bg"></div>
                     </div>
                   </div>
                 </div>
@@ -52,7 +48,7 @@ export default function UserFormLook() {
                   <h2>{t("accessroles")}</h2>
                   <div className="user__form__info">
                     <label>{t("chooserole")}</label>
-                    <div className="form__right__select">
+                    <div className="form__right__select_bg">
                       {t("administrator")}<MdOutlineKeyboardArrowDown className="form__right__icon" />
                     </div>
                   </div>
