@@ -6,9 +6,8 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
-export default function UserItem({ id, item, onDelete }) {
-  const { full_name, phone_number, user_roles } = item;
-  console.log(item);
+export default function UserItem({ item, onDelete }) {
+  const { full_name, phone_number, user_roles, id } = item;
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
 
@@ -39,7 +38,7 @@ export default function UserItem({ id, item, onDelete }) {
       <ModalDelete
         open={open}
         setOpen={setOpen}
-        onDelete={onDelete}  
+        onDelete={onDelete}
         id={id}
         name={name}
       />
