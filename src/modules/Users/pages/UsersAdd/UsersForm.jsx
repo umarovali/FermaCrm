@@ -69,9 +69,11 @@ export default function UserForm() {
                   <h2>{t("accessroles")}</h2>
                   <div className="user__form__info">
                     <label>{t("chooserole")}</label>
-                    <div className="form__right__select">
-                      {t("administrator")}<MdOutlineKeyboardArrowDown className="form__right__icon" />
-                    </div>
+                    <select className="form__right__select">
+                      <option value="admin">Администратор</option>
+                      <option value="courier">Курьер</option>
+                      <option value="client">Клиенты</option>
+                    </select>
                   </div>
                 </div>
               </div>
