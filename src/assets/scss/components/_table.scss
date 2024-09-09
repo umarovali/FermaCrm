@@ -9,12 +9,13 @@
 
   .table_container {
     width: 100%;
-    overflow-x: auto; // Enables horizontal scrolling on smaller screens
+    overflow-x: auto;
   }
 
   .table {
     width: 100%;
-    min-width: 900px; // Ensures the table has a minimum width for better scrolling
+    min-width: 900px;
+    border-collapse: collapse;
 
     .table_btn_eye,
     .table_btn_change,
@@ -30,22 +31,22 @@
     }
 
     .table_btn_eye {
-      background: #e6eef8;
+      background: $white_dark2;
       color: $blue;
     }
 
     .table_btn_change {
-      background: #fff8ee;
+      background: $light_orang2;
       color: $orang;
     }
 
     .table_btn_delete {
-      background: #ffe6e6;
-      color: #ff0000;
+      background: $orang2;
+      color: $red;
     }
 
     .table_btn_save {
-      background: #E2F5E4;
+      background: $light_green;
     }
 
     thead {
@@ -123,7 +124,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: transparent;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid $white_dark;
 
         td {
           color: $black;
@@ -133,12 +134,9 @@
           font-weight: 400;
           font-size: 16px;
           overflow: hidden;
-          /* Hide overflow text */
           text-overflow: ellipsis;
-          /* Add ellipsis for overflow text */
           white-space: nowrap;
-          max-width: 250px;
-
+          width: 100%;
 
           &:nth-child(1) {
             max-width: 48px;
