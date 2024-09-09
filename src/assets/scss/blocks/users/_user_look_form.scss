@@ -58,7 +58,7 @@
                     align-items: start;
 
                     h2 {
-                        color: #020105;
+                        color: $black_light2;
                         font-family: Golos;
                         font-size: 16px;
                         font-weight: 700;
@@ -86,7 +86,7 @@
                                 width: 100%;
                                 height: 40px;
                                 border-radius: 12px;
-                                border: 1px solid #e9ecef;
+                                border: 1px solid $border;
                                 background: #F5F5F5;
                                 padding-left: 10px;
                             }
@@ -109,7 +109,7 @@
                     align-items: start;
 
                     h2 {
-                        color: #020105;
+                        color: $black_light2;
                         font-family: $golos_fonts;
                         font-size: 16px;
                         font-weight: 600;
@@ -121,7 +121,7 @@
                         gap: 8px;
 
                         label {
-                            color: #020105;
+                            color: $black_light2;
                             font-family: $golos_fonts;
                             font-size: 14px;
                             font-weight: 400;
@@ -134,8 +134,8 @@
                             width: 100%;
                             height: 40px;
                             border-radius: 12px;
-                            border: 1px solid #e9ecef;
-                            background: #E9ECEF;
+                            border: 1px solid $border;
+                            background: $border;
                             padding: 0 12px;
                             font-family: $golos_fonts;
                             font-size: 14px;

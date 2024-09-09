@@ -10,7 +10,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 24px;
-        border-bottom: 1px solid #E6E6E6;
+        border-bottom: 1px solid $white_dark;
 
 
         .product_back_btn {
@@ -20,7 +20,7 @@
             padding: 12px 16px;
             width: auto;
             border-radius: 18px;
-            background: #F0F0F0;
+            background: $white_light;
         }
 
         .product_add_btn {
@@ -78,7 +78,7 @@
         .product_form_input_bg {
             width: 100%;
             border-radius: 12px;
-            border: 1px solid #E9ECEF;
+            border: 1px solid $border;
             background: #F5F5F5;
             outline: none;
             color: #ADB5BD;

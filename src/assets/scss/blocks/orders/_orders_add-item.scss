@@ -19,11 +19,11 @@
       height: 40px;
       padding: 0px 16px;
       border-radius: 12px;
-      border: 1px solid var(--Dark-Grey-30, #e9ecef);
-      background: var(--White, #fff);
+      border: 1px solid $border;
+      background: $white;
 
       h3 {
-        color: #343a40;
+        color: $gray_light2;
         font-family: $golos_fonts;
         font-size: 16px;
         font-style: normal;
@@ -34,8 +34,8 @@
     .order_product_count {
       width: 161px;
       border-radius: 10px;
-      border: 1px solid #ffe2b8;
-      background: #fff7ee;
+      border: 1px solid $light_orang3;
+      background: $orang3;
       height: 40px;
       display: flex;
       align-items: center;
@@ -85,7 +85,7 @@
         font-weight: 400;
         cursor: pointer;
         color: $black_light;
-        border: 0.111111px solid #ffe2b8;
+        border: 0.111111px solid $light_orang3;
 
         &:hover {
           background: #d3d3d3;
@@ -94,7 +94,7 @@
     }
 
     .order_product_sum {
-      color: var(--Black, #020105);
+      color:$black_light2;
       font-family: $golos_fonts;
       font-size: 20px;
       font-style: normal;

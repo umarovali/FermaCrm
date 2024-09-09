@@ -54,7 +54,7 @@
         gap: 20px;
 
         label {
-          color: #020105;
+          color: $black_light2;
           font-family: $golos_fonts;
           font-size: 14px;
           font-weight: 400;
@@ -64,31 +64,31 @@
           width: 300px;
           height: 40px;
           border-radius: 12px;
-          border: 1px solid #e9ecef;
+          border: 1px solid $border;
           background: $white;
           padding-left: 10px;
         }
 
         button {
-          color: #1a1a1a;
+          color: $black_light2;
           font-family: $golos_fonts;
           font-size: 14px;
           font-weight: 500;
           width: 300px;
           height: 40px;
           border-radius: 14px;
-          background: #ffb84d;
+          background: $orang;
           cursor: pointer;
         }
       }
       p {
-        color: #020105;
+        color: $black_light2;
         font-family: $golos_fonts;
         font-size: 12px;
         font-weight: 400;
 
         span {
-          color: #ffb84d;
+          color: $orang;
           cursor: pointer;
         }
       }
