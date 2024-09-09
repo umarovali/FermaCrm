@@ -6,6 +6,7 @@ import ClientsItem from "./ClientsItem";
 
 export default function ClientsTable() {
   const { t } = useTranslation();
+
   return (
     <section>
       <div className="container">

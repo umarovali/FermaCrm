@@ -20,8 +20,6 @@ export default function Login() {
 
   };
 
-  // console.log(token);
-
   return (
     <>
       <div className="login__wrapper">

@@ -6,8 +6,6 @@ import useToken from './Login/store/useToken';
 export default function HomePage() {
   const token = useToken((state) => state.token);
 
-
-
   if (token) {
     return <Home />
   }

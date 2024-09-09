@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import UserItem from "./UserItem";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 export default function UserTable() {
   const { t } = useTranslation();
+  const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    axios.get("https://api.bbk.kg/admin/users")
+      .then((res) => {
+        setUser(res.data.data.records);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>{t("loading")}</p>;
+
+  if (error) return <p>{t("error")}: {error}</p>;
+
+
   return (
     <section>
       <div className="container">
@@ -31,54 +53,13 @@ export default function UserTable() {
                 </tr>
               </thead>
               <tbody>
-                <UserItem
-                  id={1}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={2}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={3}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={4}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={5}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={6}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={7}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
-                <UserItem
-                  id={8}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  role="Курьер"
-                />
+                {user.map((item) => (
+                  <UserItem
+                    key={item.id}
+                    item={item}
+                    id={1}
+                  />
+                ))}
               </tbody>
             </table>
           </div>
