@@ -9,7 +9,7 @@ export default function ModalDelete({ open, setOpen, onDelete, id, name }) {
   const handleClose = () => setOpen(false);
 
   const handleConfirmDelete = () => {
-    onDelete(id); 
+    onDelete(id);
     handleClose();
   };
 
