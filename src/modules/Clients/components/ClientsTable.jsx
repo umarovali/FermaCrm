@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
-import ClientsItem from "./ClientsItem";
+import axios from "axios";
 
 export default function ClientsTable() {
   const { t } = useTranslation();
+  const [client, setClient] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bbk.kg/admin/clients/")
+      .then((res) => {
+        console.log(res.data.data.records);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>{t("loading")}</p>;
+
+  if (error) return <p>{t("error")}: {error}</p>;
+
 
   return (
     <section>
@@ -36,62 +57,15 @@ export default function ClientsTable() {
                 </tr>
               </thead>
               <tbody>
-                <ClientsItem
-                  id={1}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={2}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={3}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={4}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={5}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={6}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={7}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
-                <ClientsItem
-                  id={8}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  iin="111 333 444 666"
-                  courier="Курьер"
-                />
+                {client.map((item, index) => (
+                  <ProductItem
+                    key={item.id}
+                    id={index + 1} 
+                    name={item.name}
+                    quantity={item.quantity}
+                    price={item.price}
+                  />
+                ))}
               </tbody>
             </table>
           </div>

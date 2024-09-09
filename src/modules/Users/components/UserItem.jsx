@@ -39,7 +39,7 @@ export default function UserItem({ id, item, onDelete }) {
       <ModalDelete
         open={open}
         setOpen={setOpen}
-        onDelete={onDelete}  // onDelete passed to ModalDelete
+        onDelete={onDelete}  
         id={id}
         name={name}
       />

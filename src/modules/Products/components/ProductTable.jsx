@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; 
 import { IoIosArrowDown } from "react-icons/io";
+import axios from "axios";
 import ProductItem from "./ProductItem";
 import { useTranslation } from "react-i18next";
 
 export default function ProductTable() {
   const { t } = useTranslation();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bbk.kg/admin/products/")
+      .then((res) => {
+        setProduct(res.data.data.records);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>{t("loading")}</p>;
+
+  if (error) return <p>{t("error")}: {error}</p>;
 
   return (
     <section>
@@ -31,10 +52,15 @@ export default function ProductTable() {
                 </tr>
               </thead>
               <tbody>
-                <ProductItem id={1} name="С1" quantity="10 000" price="3 500" />
-                <ProductItem id={2} name="С2" quantity="10 000" price="4 500" />
-                <ProductItem id={3} name="С3" quantity="10 000" price="5 500" />
-                <ProductItem id={4} name="С4" quantity="10 000" price="6 500" />
+                {product.map((item, index) => (
+                  <ProductItem
+                    key={item.id}
+                    id={index + 1} 
+                    name={item.name}
+                    quantity={item.quantity}
+                    price={item.price}
+                  />
+                ))}
               </tbody>
             </table>
           </div>

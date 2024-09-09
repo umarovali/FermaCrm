@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
-import CouriersItem from "./CouriersItem";
+import axios from "axios";
+import CouriersItem from "./CouriersItem"; // Ensure this import is correct
 
 export default function CouriersTable() {
   const { t } = useTranslation();
+  const [couriers, setCouriers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://api.bbk.kg/admin/couriers/")
+      .then((res) => {
+        setCouriers(res.data.data.records);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>{t("loading")}</p>;
+
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
+
   return (
     <section>
       <div className="container">
@@ -31,58 +58,19 @@ export default function CouriersTable() {
                 </tr>
               </thead>
               <tbody>
-                <CouriersItem
-                  id={1}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={2}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={3}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={4}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={5}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={6}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={7}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
-                <CouriersItem
-                  id={8}
-                  name="Janibek Maxatov"
-                  tel="+99699 807 01 16"
-                  salary="12 000"
-                />
+                {couriers.map((item, index) => (
+                  <CouriersItem
+                    key={item.id}
+                    id={index + 1}
+                    name={item.name}
+                    tel={item.telephone}
+                    salary={item.salary}
+                  />
+                ))}
               </tbody>
             </table>
           </div>
-            <PaginationTable />
+          <PaginationTable />
         </div>
       </div>
     </section>
