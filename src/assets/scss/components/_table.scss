@@ -136,7 +136,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          max-width: 250px;
+          width: 100%;
 
           &:nth-child(1) {
             max-width: 48px;
