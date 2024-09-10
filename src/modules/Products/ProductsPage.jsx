@@ -11,7 +11,7 @@ export default function ProductsPage() {
             <Route path='/' element={<Product />} />
             <Route path='/product-add' element={<ProductAdd />} />
             <Route path='/product-edit' element={<ProductEdit />} />
-            <Route path='/product-look' element={<ProductLook />} />
+            <Route path='/product-look/:id' element={<ProductLook />} />
         </Routes>
     );
 }

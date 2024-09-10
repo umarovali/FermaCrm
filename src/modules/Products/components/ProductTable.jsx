@@ -24,23 +24,28 @@ export default function ProductTable() {
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`https://api.bbk.kg/admin/products/${id}`)
-      .then(() => {
-        setProducts((prevProducts) => prevProducts.filter(product => product.id !== id));
-      })
-      .catch((error) => {
-        console.error("Error deleting product:", error);
-        alert(t("deleteError"));
-      });
+    const confirmDelete = window.confirm(t("confirmDelete"));
+    if (confirmDelete) {
+      axios
+        .delete(`https://api.bbk.kg/admin/products/${id}`)
+        .then(() => {
+          setProducts((prevProducts) => prevProducts.filter(product => product.id !== id));
+        })
+        .catch((error) => {
+          console.error("Error deleting product:", error);
+          alert(t("deleteError"));
+        });
+    }
   };
 
   if (loading) return <p>{t("loading")}</p>;
 
   if (error) return <p>{t("error")}: {error}</p>;
 
+  if (products.length === 0) return <p>{t("noProductsFound")}</p>;
+
   return (
-    <section>
+    <section className="product-table-section">
       <div className="container">
         <div className="table_bg">
           <div className="table_container">
@@ -67,12 +72,12 @@ export default function ProductTable() {
                 {products.map((item, index) => (
                   <ProductItem
                     key={item.id}
-                    id={item.id} 
+                    id={item.id}
                     name={item.name}
                     quantity={item.quantity}
                     price={item.price}
                     onDelete={handleDelete}
-                    count={index + 1} 
+                    count={index + 1}
                   />
                 ))}
               </tbody>
