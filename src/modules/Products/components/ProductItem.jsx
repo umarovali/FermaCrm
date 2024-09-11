@@ -5,25 +5,26 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
-export default function ProductItem({ id, name, quantity, price }) {
+export default function ProductItem({ id, name, quantity, price, onDelete, count }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
       <tr>
-        <td>{id}</td>
+        <td>{count}</td>
         <td>{name}</td>
         <td>{quantity}</td>
         <td>{price}</td>
         <td>
-          <Link to="/products/product-look">
+          <Link to={`/products/product-look/${id}`}>
             <div className="table_btn_eye">
               <FiEye className="table-icon" />
             </div>
           </Link>
-          <Link to="/products/product-edit">
+          <Link to={`/products/product-edit/${id}`}>
             <div className="table_btn_change">
               <LuPencil className="table-icon" />
             </div>
@@ -33,7 +34,7 @@ export default function ProductItem({ id, name, quantity, price }) {
           </div>
         </td>
       </tr>
-      <ModalDelete open={open} setOpen={setOpen} />
+      <ModalDelete open={open} setOpen={setOpen} onDelete={onDelete} id={id} name={name} />
     </>
   );
 }

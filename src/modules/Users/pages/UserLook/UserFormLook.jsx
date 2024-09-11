@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-// icons
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-// img
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
+import Loading from "../../../../assets/images/loading.svg"; 
+
 
 export default function UserFormLook() {
   const { t } = useTranslation();
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`https://api.bbk.kg/admin/users/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setItem(res.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
 
   return (
     <section>
@@ -20,10 +52,7 @@ export default function UserFormLook() {
           <form>
             <div className="user__form__wrapper">
               <div className="user__form__left">
-                <img
-                  src={User}
-                  alt="user"
-                />
+                <img src={User} alt="user" />
               </div>
               <div className="user__form__right">
                 <div className="user__form__right-top">
@@ -31,15 +60,23 @@ export default function UserFormLook() {
                   <div className="user__form__data">
                     <div className="user__form__info">
                       <label>{t("fullname")}</label>
-                      <div className="user_look_bg"></div>
+                      <div className="user_look_bg">
+                        {item?.full_name || t("noData")}
+                      </div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("phonenumber")}</label>
-                      <div className="user_look_bg"></div>
+                      <div className="user_look_bg">
+                        {item?.phone_number || t("noData")}
+                      </div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("password")}</label>
-                      <div className="user_look_bg"></div>
+                      <input
+                        type="text"
+                        value={item?.password || ""}
+                        readOnly
+                      />
                     </div>
                   </div>
                 </div>
@@ -49,7 +86,8 @@ export default function UserFormLook() {
                   <div className="user__form__info">
                     <label>{t("chooserole")}</label>
                     <div className="form__right__select_bg">
-                      {t("administrator")}<MdOutlineKeyboardArrowDown className="form__right__icon" />
+                      {item?.user_roles?.join(", ") || t("noData")}
+                      <MdOutlineKeyboardArrowDown className="form__right__icon" />
                     </div>
                   </div>
                 </div>

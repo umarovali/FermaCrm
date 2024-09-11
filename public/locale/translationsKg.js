@@ -15,7 +15,7 @@ const translationsKg = {
   changeproduct: "Продукцияны өзгөртүү",
   viewproducts: "Продукцияларды көрүү",
   changeuser: "Колдонуучуну өзгөртүү",
-  viewadministrator: "Администраторду көрүү",
+  viewadministrator: "Колдонуучуну көрүү",
 
   // sidebar
   menu: "меню",

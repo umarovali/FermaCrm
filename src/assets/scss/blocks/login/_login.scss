@@ -67,6 +67,10 @@
           border: 1px solid $border;
           background: $white;
           padding-left: 10px;
+
+          &.error {
+            border: 1px solid red; 
+          }
         }
 
         button {
@@ -80,7 +84,15 @@
           background: $orang;
           cursor: pointer;
         }
+
+        .error-text {
+          color: red;
+          font-size: 12px;
+          font-family: $golos_fonts;
+          margin: 0;
+        }
       }
+
       p {
         color: $black_light2;
         font-family: $golos_fonts;

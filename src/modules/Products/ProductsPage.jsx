@@ -10,8 +10,8 @@ export default function ProductsPage() {
         <Routes>
             <Route path='/' element={<Product />} />
             <Route path='/product-add' element={<ProductAdd />} />
-            <Route path='/product-edit' element={<ProductEdit />} />
-            <Route path='/product-look' element={<ProductLook />} />
+            <Route path='/product-edit/:id' element={<ProductEdit />} />
+            <Route path='/product-look/:id' element={<ProductLook />} />
         </Routes>
     );
 }

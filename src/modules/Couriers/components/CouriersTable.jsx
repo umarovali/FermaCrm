@@ -3,7 +3,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import CouriersItem from "./CouriersItem"; // Ensure this import is correct
+import CouriersItem from "./CouriersItem";
+import Loading from "../../../assets/images/loading.svg"; 
+
 
 export default function CouriersTable() {
   const { t } = useTranslation();
@@ -15,7 +17,7 @@ export default function CouriersTable() {
     axios
       .get("https://api.bbk.kg/admin/couriers/")
       .then((res) => {
-        setCouriers(res.data.data.records);
+        console.log(res.data.data.records);
         setLoading(false);
       })
       .catch((error) => {
@@ -24,8 +26,12 @@ export default function CouriersTable() {
       });
   }, []);
 
-  if (loading) return <p>{t("loading")}</p>;
-
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
   if (error)
     return (
       <p>
@@ -62,9 +68,9 @@ export default function CouriersTable() {
                   <CouriersItem
                     key={item.id}
                     id={index + 1}
-                    name={item.name}
-                    tel={item.telephone}
-                    salary={item.salary}
+                    name={item.user.full_name}
+                    tel={item.user.phone_number}
+                    salary={item.salary || "N/A"}
                   />
                 ))}
               </tbody>

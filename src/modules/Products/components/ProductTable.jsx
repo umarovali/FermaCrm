@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import axios from "axios";
 import ProductItem from "./ProductItem";
 import { useTranslation } from "react-i18next";
+import Loading from "../../../assets/images/loading.svg"; 
+
 
 export default function ProductTable() {
   const { t } = useTranslation();
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -14,7 +16,7 @@ export default function ProductTable() {
     axios
       .get("https://api.bbk.kg/admin/products/")
       .then((res) => {
-        setProduct(res.data.data.records);
+        setProducts(res.data.data.records);
         setLoading(false);
       })
       .catch((error) => {
@@ -23,12 +25,30 @@ export default function ProductTable() {
       });
   }, []);
 
-  if (loading) return <p>{t("loading")}</p>;
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://api.bbk.kg/admin/products/${id}`)
+      .then(() => {
+        setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+        alert(t("deleteError"));
+      });
+  };
 
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
   if (error) return <p>{t("error")}: {error}</p>;
 
+  if (products.length === 0) return <p>{t("noProductsFound")}</p>;
+
   return (
-    <section>
+    <section className="product-table-section">
       <div className="container">
         <div className="table_bg">
           <div className="table_container">
@@ -52,13 +72,15 @@ export default function ProductTable() {
                 </tr>
               </thead>
               <tbody>
-                {product.map((item, index) => (
+                {products.map((item, index) => (
                   <ProductItem
                     key={item.id}
-                    id={index + 1} 
+                    id={item.id}
                     name={item.name}
                     quantity={item.quantity}
                     price={item.price}
+                    onDelete={handleDelete}
+                    count={index + 1}
                   />
                 ))}
               </tbody>

@@ -8,19 +8,19 @@ import Avatar from "../assets/images/avatar.svg";
 // import react-icons
 import { IoIosArrowDown } from "react-icons/io";
 import i18n from "i18next";
-import { initReactI18next } from 'react-i18next';
+import { initReactI18next } from "react-i18next";
 import translationsRu from "../../public/locale/translationsru";
 import translationsUz from "../../public/locale/translationsuz";
 import translationsKg from "../../public/locale/translationsKg";
 
 i18n.use(initReactI18next).init({
-    resources: {
-        ru: { translation: translationsRu },
-        uz: { translation: translationsUz },
-        kg: { translation: translationsKg }
-    },
-    lng: "ru",
-    fallbackLng: "ru"
+  resources: {
+    ru: { translation: translationsRu },
+    uz: { translation: translationsUz },
+    kg: { translation: translationsKg },
+  },
+  lng: "ru",
+  fallbackLng: "ru",
 });
 
 export default function Header({ text }) {
@@ -56,7 +56,9 @@ export default function Header({ text }) {
   useEffect(() => {
     const savedLanguage = localStorage.getItem("selectedLanguage");
     if (savedLanguage) {
-      const language = languageOptions.find(lang => lang.value === savedLanguage);
+      const language = languageOptions.find(
+        (lang) => lang.value === savedLanguage
+      );
       if (language) {
         setSelectedLanguage(language);
         changeLang(savedLanguage);
@@ -66,6 +68,11 @@ export default function Header({ text }) {
 
   const { t } = useTranslation();
 
+  const handleLogout = () => {
+    localStorage.clear(); 
+    window.location.href = "/login"; 
+  };
+  
   return (
     <header className="header">
       <div className="container">
@@ -90,7 +97,9 @@ export default function Header({ text }) {
               {isLanguageDropdownOpen && (
                 <div className="language_dropdown">
                   {languageOptions
-                    .filter((language) => language.code !== selectedLanguage.code)
+                    .filter(
+                      (language) => language.code !== selectedLanguage.code
+                    )
                     .map((language) => (
                       <div
                         key={language.code}
@@ -130,7 +139,9 @@ export default function Header({ text }) {
                 <ul className="profile_dropdown">
                   <li className="profile_option">{t("profile")}</li>
                   <li className="profile_option">{t("settings")}</li>
-                  <li className="profile_option">{t("logout")}</li>
+                  <li className="profile_option" onClick={handleLogout}>
+                    {t("logout")}
+                  </li>
                 </ul>
               )}
             </div>

@@ -14,7 +14,7 @@ const translationsUz = {
   productdata: "Mahsulot ma'lumotlari",
   changeproduct: "Mahsulotlarni ko'ring",
   changeuser: "Foydalanuvchini o'zgartirish",
-  viewadministrator: "Administratorni ko'ring",
+  viewadministrator: "Foydalanuvchini ko'ring",
 
   // sidebar
   menu: "Menu",
