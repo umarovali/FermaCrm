@@ -34,7 +34,7 @@ export default function ProductForm() {
             console.error('Error adding product:', error);
         });
     };
-    
+
     return (
         <section>
             <div className="container">

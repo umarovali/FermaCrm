@@ -17,7 +17,6 @@ export default function Login() {
       .catch(function (error) {
         console.log(`Произошло ошибка: ${error}`);
       });
-
   };
 
   return (
