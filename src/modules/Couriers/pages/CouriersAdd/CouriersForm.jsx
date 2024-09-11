@@ -3,12 +3,18 @@ import { useTranslation } from "react-i18next";
 // icons
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
-import User from "../../../../assets/images/user.svg";
+import UserFoto from "../../../../assets/images/user_foto.png";
 import BackAdd from "../../../../components/Back/BackAdd";
+import axios from "axios";
 
 export default function CouriersForm() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState();
+  const formRef = useRef();
+  const fileInputRef = useRef();
+  const fullNameRef = useRef();
+  const phoneNumberRef = useRef();
+  const passwordRef = useRef();
+  const salaryRef = useRef();
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -22,18 +28,60 @@ export default function CouriersForm() {
 
   const { t } = useTranslation();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const file = fileInputRef.current.files[0];
+
+    let uploadPromise;
+
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      uploadPromise = axios.post("https://api.bbk.kg/upload", formData)
+        .then((response) => response.data.data.image);
+    } else {
+      uploadPromise = Promise.resolve(UserFoto);
+    }
+
+    uploadPromise.then((imageUrl) => {
+      const postData = {
+        full_name: fullNameRef.current.value.trim(),
+        phone_number: phoneNumberRef.current.value.trim(),
+        salary: salaryRef.current.value.trim(),
+        password: passwordRef.current.value.trim(),
+        image: imageUrl,
+      }
+
+      return axios.post("https://api.bbk.kg/admin/couriers/", postData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    })
+      .then(() => {
+        alert("Пользователь успешно добавлен!");
+        formRef.current.reset();
+        setSelectedImage(null);
+      })
+      .catch((error) => {
+        console.error("Ошибка загрузки:", error.response ? error.response.data : error.message);
+      });
+  }
+
   return (
     <section>
       <div className="container">
         <section className="couriers__form">
           <div className="couriers__form__header">
-            <BackAdd />
+            <BackAdd formRef={formRef} />
           </div>
-          <form>
+          <form ref={formRef} onSubmit={handleSubmit}>
             <div className="couriers__form__wrapper">
               <div className="couriers__form__left">
                 <img
-                  src={selectedImage || User}
+                  src={selectedImage || UserFoto}
                   alt="user"
                   onClick={handleImageClick}
                   style={{ cursor: "pointer" }}
@@ -54,19 +102,19 @@ export default function CouriersForm() {
                 <div className="couriers__form__data">
                   <div className="couriers__form__info">
                     <label>{t("fullname")}</label>
-                    <input type="text" />
+                    <input type="text" ref={fullNameRef} />
                   </div>
                   <div className="couriers__form__info">
                     <label>{t("phonenumber")}</label>
-                    <input type="text" placeholder="+996" />
+                    <input type="text" placeholder="+996" ref={phoneNumberRef} />
                   </div>
                   <div className="couriers__form__info">
                     <label>{t("password")}</label>
-                    <input type="password" />
+                    <input type="password" ref={passwordRef} />
                   </div>
                   <div className="couriers__form__info">
                     <label>Зарплата *</label>
-                    <input type="number" />
+                    <input type="number" ref={salaryRef} />
                   </div>
                 </div>
               </div>

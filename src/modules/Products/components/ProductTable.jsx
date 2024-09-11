@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import axios from "axios";
 import ProductItem from "./ProductItem";
 import { useTranslation } from "react-i18next";
-import Loading from "../../../assets/images/loading.svg"; 
+import Loading from "../../../assets/images/loading.svg";
 
 
 export default function ProductTable() {

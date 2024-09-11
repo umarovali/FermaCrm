@@ -4,7 +4,7 @@ import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import CouriersItem from "./CouriersItem";
-import Loading from "../../../assets/images/loading.svg"; 
+import Loading from "../../../assets/images/loading.svg";
 
 
 export default function CouriersTable() {
@@ -17,7 +17,7 @@ export default function CouriersTable() {
     axios
       .get("https://api.bbk.kg/admin/couriers/")
       .then((res) => {
-        console.log(res.data.data.records);
+        setCouriers(res.data.data.records);
         setLoading(false);
       })
       .catch((error) => {

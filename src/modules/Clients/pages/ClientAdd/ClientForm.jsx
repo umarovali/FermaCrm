@@ -7,10 +7,17 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import User from "../../../../assets/images/user.svg";
 import BackAdd from "../../../../components/Back/BackAdd";
 import { BiCopy } from "react-icons/bi";
+import axios from "axios";
 
 export default function ClientForm() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState();
+  const { t } = useTranslation();
+  const fileInputRef = useRef();
+  const formRef = useRef();
+  const fullNameRef = useRef();
+  const phoneNumberRef = useRef();
+  const innRef = useRef();
+  const locationRef = useRef();
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -22,16 +29,55 @@ export default function ClientForm() {
     fileInputRef.current.click();
   };
 
-  const { t } = useTranslation();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const file = fileInputRef.current.files[0];
+
+    let uploadPromise;
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("image", file)
+
+      uploadPromise = axios.post("https://api.bbk.kg/upload", formData)
+        .then((response) => response.data.data.image);
+    } else {
+      uploadPromise = Promise.resolve(UserFoto);
+    }
+
+    uploadPromise.then((imageUrl) => {
+      const postData = {
+        full_name: fullNameRef.current.value.trim(),
+        phone_number: phoneNumberRef.current.value.trim(),
+        inn: innRef.current.value.trim(),
+        role: locationRef.current.value.trim(),
+        image: imageUrl,
+      };
+
+      return axios.post("https://api.bbk.kg/admin/clients/", postData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    })
+      .then(() => {
+        alert("Пользователь успешно добавлен!");
+        formRef.current.reset();
+        setSelectedImage(null);
+      })
+      .catch((error) => {
+        console.error("Ошибка загрузки:", error.response ? error.response.data : error.message);
+      });
+  };
 
   return (
     <section>
       <div className="container">
         <section className="client__form">
           <div className="client__form__header">
-            <BackAdd />
+            <BackAdd formRef={formRef} />
           </div>
-          <form>
+          <form ref={formRef} onSubmit={handleSubmit}>
             <div className="client__form__wrapper">
               <div className="client__form__left">
                 <img
@@ -57,15 +103,15 @@ export default function ClientForm() {
                   <div className="client__form__data">
                     <div className="client__form__info">
                       <label>{t("fullname")}</label>
-                      <input type="text" />
+                      <input ref={fullNameRef} type="text" />
                     </div>
                     <div className="client__form__info">
                       <label>{t("phonenumber")}</label>
-                      <input type="text" placeholder="+996" />
+                      <input ref={phoneNumberRef} type="text" placeholder="+996" />
                     </div>
                     <div className="client__form__info">
-                      <label>{t("password")}</label>
-                      <input type="password" />
+                      <label>ИНН *</label>
+                      <input ref={innRef} type="password" />
                     </div>
                   </div>
                 </div>
@@ -86,15 +132,15 @@ export default function ClientForm() {
                   <div className="client__form-map">
                     <iframe
                       src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac0e87cf7d6ad861d6fd0df4913c2e277ac0c49c76f31085fde1e5d93be83ed49&amp;source=constructor"
-                      frameborder="0"
                     ></iframe>
                     <label>{t("link")}</label>
                     <div className="client__form-map-input">
                       <input
+                        ref={locationRef}
                         type="url"
                         placeholder="+https://yandex.com/maps/geo/771288885/?ll=69.257748%2C41.311121&z=14.88"
                       />
-                      <BiCopy className="icon-copy"/>
+                      <BiCopy className="icon-copy" />
                     </div>
                   </div>
                 </div>

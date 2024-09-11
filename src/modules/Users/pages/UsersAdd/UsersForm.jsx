@@ -50,13 +50,13 @@ export default function UserForm() {
         image: imageUrl,
       };
 
-      return axios.post("https://api.bbk.kg/admin/users/", JSON.stringify(postData), {
+      return axios.post("https://api.bbk.kg/admin/users/", postData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
     })
-      .then((response) => {
+      .then(() => {
         alert("Пользователь успешно добавлен!");
         formRef.current.reset();
         setSelectedImage(null);
@@ -116,6 +116,7 @@ export default function UserForm() {
                     <label>{t("chooserole")}</label>
                     <select className="form__right__select" ref={roleRef}>
                       <option value="CLIENT">Клиенты</option>
+                      <option value="COURIER">Куреры</option>
                     </select>
                   </div>
                 </div>
