@@ -45,6 +45,13 @@ input {
   display: flex;
 }
 
+.loadin__img{
+  width: 460px;
+  height: 90px;
+  object-fit: contain;
+  margin-top: 100px;
+}
+
 @media (max-width: 900px) {
   .home {
     display: flex;

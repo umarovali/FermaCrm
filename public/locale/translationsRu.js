@@ -15,7 +15,7 @@ const translationsRu = {
   changeproduct: "Изменить продукт",
   viewproducts: "Посмотреть продукты",
   changeuser: "Изменить пользователя",
-  viewadministrator: "Посмотреть администратора",
+  viewadministrator: "Посмотреть пользователя",
 
   // sidebar
   menu: "меню",

@@ -4,20 +4,20 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 // icons
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 // img
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
 import { BiCopy } from "react-icons/bi";
+import Loading from "../../../../assets/images/loading.svg"; 
+
 
 export default function ClientFormLook() {
   const { t } = useTranslation();
-  const { id } = useParams(); 
+  const { id } = useParams();
   const [client, setClient] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [passwordVisible, setPasswordVisible] = useState(false);
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -43,12 +43,12 @@ export default function ClientFormLook() {
     fileInputRef.current.click();
   };
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
-
-  if (loading) return <p>{t("loading")}</p>;
-  if (error) return <p>{t("error")}: {error}</p>;
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );  if (error) return <p>{t("error")}: {error}</p>;
 
   return (
     <section>
@@ -88,20 +88,7 @@ export default function ClientFormLook() {
                     </div>
                     <div className="client__form__info">
                       <label>{t("password")}</label>
-                      <div className="password-wrapper">
-                        <input
-                          type={passwordVisible ? "text" : "password"}
-                          value={t("hidden")}
-                          readOnly
-                        />
-                        <button type="button" onClick={togglePasswordVisibility}>
-                          {passwordVisible ? (
-                            <FaRegEyeSlash />
-                          ) : (
-                            <FaRegEye />
-                          )}
-                        </button>
-                      </div>
+                      <input type="text" value={client?.user.password || ""} readOnly />
                     </div>
                   </div>
                 </div>

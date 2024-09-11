@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios"; 
 import BackLook from "../../../../components/Back/BackLook";
 import { useTranslation } from "react-i18next";
+import Loading from "../../../../assets/images/loading.svg"; 
 
 export default function ProductFormLook() {
   const { t } = useTranslation();
@@ -24,7 +25,12 @@ export default function ProductFormLook() {
       });
   }, [id]);
 
-  if (loading) return <p>{t("loading")}</p>;
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
   if (error) return <p>{t("error")}: {error}</p>;
 
   return (

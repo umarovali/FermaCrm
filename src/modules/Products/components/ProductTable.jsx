@@ -3,6 +3,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import axios from "axios";
 import ProductItem from "./ProductItem";
 import { useTranslation } from "react-i18next";
+import Loading from "../../../assets/images/loading.svg"; 
+
 
 export default function ProductTable() {
   const { t } = useTranslation();
@@ -35,8 +37,12 @@ export default function ProductTable() {
       });
   };
 
-  if (loading) return <p>{t("loading")}</p>;
-
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
   if (error) return <p>{t("error")}: {error}</p>;
 
   if (products.length === 0) return <p>{t("noProductsFound")}</p>;

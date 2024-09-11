@@ -3,6 +3,8 @@ import BackEdit from "../../../../components/Back/BackEdit";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
+import Loading from "../../../../assets/images/loading.svg"; 
+
 
 export default function ProductEditForm() {
   const { id } = useParams(); 
@@ -54,8 +56,12 @@ export default function ProductEditForm() {
     handleSubmit(new Event('submit'));
   };
 
-  if (loading) return <p>{t("loading")}</p>;
-  if (error) return <p>{t("error")}: {error}</p>;
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );  if (error) return <p>{t("error")}: {error}</p>;
 
   return (
     <section>

@@ -5,6 +5,8 @@ import axios from "axios";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
+import Loading from "../../../../assets/images/loading.svg"; 
+
 
 export default function UserFormLook() {
   const { t } = useTranslation();
@@ -17,7 +19,7 @@ export default function UserFormLook() {
     axios
       .get(`https://api.bbk.kg/admin/users/${id}`)
       .then((res) => {
-        console.log(res.data); 
+        console.log(res.data);
         setItem(res.data.data);
         setLoading(false);
       })
@@ -27,8 +29,18 @@ export default function UserFormLook() {
       });
   }, [id]);
 
-  if (loading) return <p>{t("loading")}</p>;
-  if (error) return <p>{t("error")}: {error}</p>;
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
 
   return (
     <section>
@@ -48,15 +60,23 @@ export default function UserFormLook() {
                   <div className="user__form__data">
                     <div className="user__form__info">
                       <label>{t("fullname")}</label>
-                      <div className="user_look_bg">{item?.full_name || t("noData")}</div>
+                      <div className="user_look_bg">
+                        {item?.full_name || t("noData")}
+                      </div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("phonenumber")}</label>
-                      <div className="user_look_bg">{item?.phone_number || t("noData")}</div>
+                      <div className="user_look_bg">
+                        {item?.phone_number || t("noData")}
+                      </div>
                     </div>
                     <div className="user__form__info">
                       <label>{t("password")}</label>
-                      <div className="user_look_bg">{t("hidden")}</div>
+                      <input
+                        type="text"
+                        value={item?.password || ""}
+                        readOnly
+                      />
                     </div>
                   </div>
                 </div>
@@ -66,7 +86,8 @@ export default function UserFormLook() {
                   <div className="user__form__info">
                     <label>{t("chooserole")}</label>
                     <div className="form__right__select_bg">
-                      {item?.user_roles?.join(', ') || t("noData")}<MdOutlineKeyboardArrowDown className="form__right__icon" />
+                      {item?.user_roles?.join(", ") || t("noData")}
+                      <MdOutlineKeyboardArrowDown className="form__right__icon" />
                     </div>
                   </div>
                 </div>

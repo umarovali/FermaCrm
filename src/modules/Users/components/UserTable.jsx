@@ -4,6 +4,7 @@ import UserItem from "./UserItem";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import Loading from "../../../assets/images/loading.svg"; 
 
 export default function UserTable() {
   const { t } = useTranslation();
@@ -12,9 +13,10 @@ export default function UserTable() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("https://api.bbk.kg/admin/users")
+    axios
+      .get("https://api.bbk.kg/admin/users")
       .then((res) => {
-        console.log(res.data); 
+        console.log(res.data);
         setUser(res.data.data.records || res.data.data);
         setLoading(false);
       })
@@ -25,9 +27,10 @@ export default function UserTable() {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`https://api.bbk.kg/admin/users/${id}`)
+    axios
+      .delete(`https://api.bbk.kg/admin/users/${id}`)
       .then(() => {
-        setUser((prevUsers) => prevUsers.filter(user => user.id !== id));
+        setUser((prevUsers) => prevUsers.filter((user) => user.id !== id));
       })
       .catch((error) => {
         console.error("Error deleting user:", error);
@@ -35,9 +38,19 @@ export default function UserTable() {
       });
   };
 
-  if (loading) return <p>{t("loading")}</p>;
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
 
-  if (error) return <p>{t("error")}: {error}</p>;
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
 
   return (
     <section>

@@ -4,6 +4,8 @@ import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import ClientsItem from "./ClientsItem";
+import Loading from "../../../assets/images/loading.svg"; 
+
 
 export default function ClientsTable() {
   const { t } = useTranslation();
@@ -36,8 +38,12 @@ export default function ClientsTable() {
       });
   };
 
-  if (loading) return <p>{t("loading")}</p>;
-
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
   if (error)
     return (
       <p>
