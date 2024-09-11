@@ -5,19 +5,24 @@ import useToken from "./store/useToken";
 
 export default function Login() {
   const setToken = useToken((state) => state.setToken);
-  const elLogin = useRef()
-  const elPassword = useRef()
+  const elLogin = useRef();
+  const elPassword = useRef();
+  const [error, setError] = useState("");
 
   const handleLogin = (evt) => {
-    evt.preventDefault()
-    axios.post("https://api.bbk.kg/sign-in", {
-      phone_number: elLogin.current.value,
-      password: elPassword.current.value
-    }).then((res) => (setToken(res.data.data.token)))
-      .catch(function (error) {
-        console.log(`Произошло ошибка: ${error}`);
+    evt.preventDefault();
+    axios
+      .post("https://api.bbk.kg/sign-in", {
+        phone_number: elLogin.current.value,
+        password: elPassword.current.value,
+      })
+      .then((res) => {
+        setToken(res.data.data.token);
+        setError(""); 
+      })
+      .catch((error) => {
+        setError("Неверный логин или пароль"); 
       });
-
   };
 
   return (
@@ -39,12 +44,15 @@ export default function Login() {
               <input
                 type="text"
                 ref={elLogin}
+                className={error ? "error" : ""}
               />
               <label>Пароль</label>
               <input
                 type="password"
                 ref={elPassword}
+                className={error ? "error" : ""}
               />
+              {error && <p className="error-text">{error}</p>}
               <button type="submit">Вход</button>
             </form>
             <p>
