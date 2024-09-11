@@ -1,16 +1,37 @@
-import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 // icons
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 // img
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
 import { BiCopy } from "react-icons/bi";
 
 export default function ClientFormLook() {
+  const { t } = useTranslation();
+  const { id } = useParams(); 
+  const [client, setClient] = useState(null); 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    axios
+      .get(`https://api.bbk.kg/admin/clients/${id}`)
+      .then((res) => {
+        setClient(res.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, [id]);
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -22,7 +43,12 @@ export default function ClientFormLook() {
     fileInputRef.current.click();
   };
 
-  const { t } = useTranslation();
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  if (loading) return <p>{t("loading")}</p>;
+  if (error) return <p>{t("error")}: {error}</p>;
 
   return (
     <section>
@@ -35,7 +61,7 @@ export default function ClientFormLook() {
             <div className="client__form__wrapper">
               <div className="client__form__left">
                 <img
-                  src={selectedImage || User}
+                  src={selectedImage || (client?.profile_image || User)}
                   alt="user"
                   onClick={handleImageClick}
                   style={{ cursor: "pointer" }}
@@ -47,9 +73,6 @@ export default function ClientFormLook() {
                   onChange={handleImageChange}
                   style={{ display: "none" }}
                 />
-                <h4 onClick={handleImageClick} style={{ cursor: "pointer" }}>
-                  {t("edit")}
-                </h4>
               </div>
               <div className="client__form__right">
                 <div className="client__form__right-top">
@@ -57,15 +80,28 @@ export default function ClientFormLook() {
                   <div className="client__form__data">
                     <div className="client__form__info">
                       <label>{t("fullname")}</label>
-                      <input type="text" />
+                      <input type="text" value={client?.user.full_name || ""} readOnly />
                     </div>
                     <div className="client__form__info">
                       <label>{t("phonenumber")}</label>
-                      <input type="text" placeholder="+996" />
+                      <input type="text" value={client?.user.phone_number || ""} readOnly />
                     </div>
                     <div className="client__form__info">
                       <label>{t("password")}</label>
-                      <input type="password" />
+                      <div className="password-wrapper">
+                        <input
+                          type={passwordVisible ? "text" : "password"}
+                          value={t("hidden")}
+                          readOnly
+                        />
+                        <button type="button" onClick={togglePasswordVisibility}>
+                          {passwordVisible ? (
+                            <FaRegEyeSlash />
+                          ) : (
+                            <FaRegEye />
+                          )}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -75,7 +111,7 @@ export default function ClientFormLook() {
                   <div className="client__form__info">
                     <label>{t("сourier")}</label>
                     <div className="form__right__select">
-                      Janibek Maxatov
+                      {client?.courier || t("noData")}
                       <MdOutlineKeyboardArrowDown className="form__right__icon" />
                     </div>
                   </div>
@@ -85,14 +121,14 @@ export default function ClientFormLook() {
                   <h2>{t("location")}</h2>
                   <div className="client__form-map">
                     <iframe
-                      src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac0e87cf7d6ad861d6fd0df4913c2e277ac0c49c76f31085fde1e5d93be83ed49&amp;source=constructor"
-                      frameborder="0"
+                      src={client?.location || "https://yandex.ru/map-widget/v1/?um=constructor%3Ac0e87cf7d6ad861d6fd0df4913c2e277ac0c49c76f31085fde1e5d93be83ed49&amp;source=constructor"}
+                      frameBorder="0"
                     ></iframe>
                     <label>{t("link")}</label>
                     <div className="client__form-map-input">
                       <input
                         type="url"
-                        placeholder="+https://yandex.com/maps/geo/771288885/?ll=69.257748%2C41.311121&z=14.88"
+                        placeholder={client?.map_link || t("noData")}
                       />
                       <BiCopy className="icon-copy"/>
                     </div>

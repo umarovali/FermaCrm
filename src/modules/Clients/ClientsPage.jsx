@@ -12,7 +12,7 @@ export default function ClientsPage() {
             <Route path='/' element={<Clients />} />
             <Route path='/client-add' element={<ClientAdd />} />
             <Route path='/client-edit' element={<ClientEdit />} />
-            <Route path='/client-look' element={<ClientLook />} />
+            <Route path='/client-look/:id' element={<ClientLook />} />
 
         </Routes>
     )
