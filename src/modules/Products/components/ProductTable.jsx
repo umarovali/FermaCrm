@@ -24,18 +24,15 @@ export default function ProductTable() {
   }, []);
 
   const handleDelete = (id) => {
-    const confirmDelete = window.confirm(t("confirmDelete"));
-    if (confirmDelete) {
-      axios
-        .delete(`https://api.bbk.kg/admin/products/${id}`)
-        .then(() => {
-          setProducts((prevProducts) => prevProducts.filter(product => product.id !== id));
-        })
-        .catch((error) => {
-          console.error("Error deleting product:", error);
-          alert(t("deleteError"));
-        });
-    }
+    axios
+      .delete(`https://api.bbk.kg/admin/products/${id}`)
+      .then(() => {
+        setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+        alert(t("deleteError"));
+      });
   };
 
   if (loading) return <p>{t("loading")}</p>;

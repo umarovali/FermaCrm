@@ -9,12 +9,13 @@ export default function UserTable() {
   const { t } = useTranslation();
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios.get("https://api.bbk.kg/admin/users")
       .then((res) => {
-        setUser(res.data.data.records);
+        console.log(res.data); 
+        setUser(res.data.data.records || res.data.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -23,10 +24,20 @@ export default function UserTable() {
       });
   }, []);
 
+  const handleDelete = (id) => {
+    axios.delete(`https://api.bbk.kg/admin/users/${id}`)
+      .then(() => {
+        setUser((prevUsers) => prevUsers.filter(user => user.id !== id));
+      })
+      .catch((error) => {
+        console.error("Error deleting user:", error);
+        alert(t("deleteError"));
+      });
+  };
+
   if (loading) return <p>{t("loading")}</p>;
 
   if (error) return <p>{t("error")}: {error}</p>;
-
 
   return (
     <section>
@@ -53,11 +64,13 @@ export default function UserTable() {
                 </tr>
               </thead>
               <tbody>
-                {user.map((item) => (
+                {user.map((item, index) => (
                   <UserItem
                     key={item.id}
+                    id={item.id}
                     item={item}
-                    id={1}
+                    onDelete={handleDelete}
+                    index={index + 1}
                   />
                 ))}
               </tbody>

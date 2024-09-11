@@ -3,10 +3,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import PaginationTable from "../../../components/PaginationTable";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import ClientsItem from "./ClientsItem";
 
 export default function ClientsTable() {
   const { t } = useTranslation();
-  const [client, setClient] = useState([]);
+  const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -14,7 +15,7 @@ export default function ClientsTable() {
     axios
       .get("https://api.bbk.kg/admin/clients/")
       .then((res) => {
-        console.log(res.data.data.records);
+        setClients(res.data.data.records);
         setLoading(false);
       })
       .catch((error) => {
@@ -23,10 +24,26 @@ export default function ClientsTable() {
       });
   }, []);
 
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://api.bbk.kg/admin/clients/${id}`)
+      .then(() => {
+        setClients((prevClients) => prevClients.filter((client) => client.id !== id));
+      })
+      .catch((error) => {
+        console.error("Error deleting client:", error);
+        alert(t("deleteError"));
+      });
+  };
+
   if (loading) return <p>{t("loading")}</p>;
 
-  if (error) return <p>{t("error")}: {error}</p>;
-
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
 
   return (
     <section>
@@ -57,13 +74,16 @@ export default function ClientsTable() {
                 </tr>
               </thead>
               <tbody>
-                {client.map((item, index) => (
-                  <ProductItem
+                {clients.map((item, index) => (
+                  <ClientsItem
                     key={item.id}
-                    id={index + 1} 
-                    name={item.name}
-                    quantity={item.quantity}
-                    price={item.price}
+                    count={index + 1}
+                    id={item.id}
+                    name={item.user.full_name}
+                    tel={item.user.phone_number}
+                    inn={item.inn}
+                    courier={item.couriers} 
+                    onDelete={handleDelete}
                   />
                 ))}
               </tbody>
