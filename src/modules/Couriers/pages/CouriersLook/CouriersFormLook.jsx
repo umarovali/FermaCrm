@@ -1,10 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 // icons
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // img
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
+import Loading from "../../../../assets/images/loading.svg";
 
 export default function CouriersFormLook() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -21,6 +25,36 @@ export default function CouriersFormLook() {
   };
 
   const { t } = useTranslation();
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`https://api.bbk.kg/admin/couriers/${id}`)
+      .then((res) => {
+        setItem(res.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading)
+    return (
+      <center>
+        <img className="loadin__img" src={Loading} alt="loading" />
+      </center>
+    );
+  if (error)
+    return (
+      <p>
+        {t("error")}: {error}
+      </p>
+    );
 
   return (
     <section>
@@ -33,7 +67,7 @@ export default function CouriersFormLook() {
             <div className="couriers__form__wrapper">
               <div className="couriers__form__left">
                 <img
-                  src={selectedImage || User}
+                  src={selectedImage || (item?.user?.image || User)}
                   alt="user"
                   onClick={handleImageClick}
                   style={{ cursor: "pointer" }}
@@ -45,28 +79,31 @@ export default function CouriersFormLook() {
                   onChange={handleImageChange}
                   style={{ display: "none" }}
                 />
-                <h4 onClick={handleImageClick} style={{ cursor: "pointer" }}>
-                  {t("edit")}
-                </h4>
               </div>
               <div className="couriers__form__right">
                 <h2>{t("userdata")}</h2>
                 <div className="couriers__form__data">
                   <div className="couriers__form__info">
                     <label>{t("fullname")}</label>
-                    <input type="text" />
+                    <div className="couriers_look_bg">
+                      {item?.user?.full_name || t("noData")}
+                    </div>
                   </div>
                   <div className="couriers__form__info">
                     <label>{t("phonenumber")}</label>
-                    <input type="text" placeholder="+996" />
+                    <div className="couriers_look_bg">
+                      {item?.user?.phone_number || t("noData")}
+                    </div>
                   </div>
                   <div className="couriers__form__info">
                     <label>{t("password")}</label>
-                    <input type="password" />
+                    <input type="text" value={item?.password || ""} readOnly />
                   </div>
                   <div className="couriers__form__info">
                     <label>Зарплата *</label>
-                    <input type="number" />
+                    <div className="couriers_look_bg">
+                      {item?.salary || t("noData")}
+                    </div>
                   </div>
                 </div>
               </div>

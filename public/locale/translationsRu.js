@@ -48,6 +48,7 @@ const translationsRu = {
 
   // couriersTable
   salary: "Зарплаты",
+  salar: "Зарплата",
 
   // clientsTable
   customer: "Клиент",

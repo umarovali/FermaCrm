@@ -6,36 +6,42 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
+export default function CouriersItem({ onDelete, index, name, tel, salary, id }) {
 
-export default function CouriersItem({ id, name, tel, salary }) {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const handleOpen = () => setOpen(true);
-  
-    return (
-        <>
-            <tr>
-                <td>{id}</td>
-                <td>{name}</td>
-                <td>{tel}</td>
-                <td>{salary}</td>
-                <td>
-                    <Link to={"/couriers/couriers-look"}>
-                        <CardActionArea className="table_btn_eye">
-                            <FiEye className="table_icon" />
-                        </CardActionArea>
-                    </Link>
-                    <Link to={"/couriers/couriers-edit"}>
-                        <CardActionArea className="table_btn_change">
-                            <LuPencil className="table_icon" />
-                        </CardActionArea>
-                    </Link>
-                    <CardActionArea className="table_btn_delete" onClick={handleOpen}>
-                        <RiDeleteBinLine className="table_icon" />
-                    </CardActionArea>
-                </td>
-            </tr>
-            <ModalDelete open={open} setOpen={setOpen} />
-        </>
-    )
+  const handleOpen = () => setOpen(true);
+
+  return (
+    <>
+      <tr>
+        <td>{index}</td>
+        <td>{name}</td>
+        <td>{tel}</td>
+        <td>{salary}</td>
+        <td>
+          <Link to={`/couriers/couriers-look/${id}`}>
+            <CardActionArea className="table_btn_eye">
+              <FiEye className="table_icon" />
+            </CardActionArea>
+          </Link>
+          <Link to={`/couriers/couriers-edit/${id}`}>
+            <CardActionArea className="table_btn_change">
+              <LuPencil className="table_icon" />
+            </CardActionArea>
+          </Link>
+          <CardActionArea className="table_btn_delete" onClick={handleOpen}>
+            <RiDeleteBinLine className="table_icon" />
+          </CardActionArea>
+        </td>
+      </tr>
+      <ModalDelete
+        open={open}
+        setOpen={setOpen}
+        onDelete={() => onDelete(id)} 
+        id={id} 
+        name={name} 
+      />
+    </>
+  );
 }

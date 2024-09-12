@@ -1,5 +1,4 @@
 import React from 'react';
-// icons
 import AddIcons from "../../assets/icons/add.svg";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';

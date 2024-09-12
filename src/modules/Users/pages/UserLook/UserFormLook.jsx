@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import User from "../../../../assets/images/user.svg";
 import BackLook from "../../../../components/Back/BackLook";
-import Loading from "../../../../assets/images/loading.svg"; 
-
+import Loading from "../../../../assets/images/loading.svg";
 
 export default function UserFormLook() {
   const { t } = useTranslation();
@@ -14,6 +13,13 @@ export default function UserFormLook() {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  // Initialize the file input ref
+  const fileInputRef = useRef(null);
+
+  const handleImageClick = () => {
+    fileInputRef.current.click();
+  };
 
   useEffect(() => {
     axios
@@ -35,6 +41,7 @@ export default function UserFormLook() {
         <img className="loadin__img" src={Loading} alt="loading" />
       </center>
     );
+  
   if (error)
     return (
       <p>
@@ -52,7 +59,12 @@ export default function UserFormLook() {
           <form>
             <div className="user__form__wrapper">
               <div className="user__form__left">
-                <img src={User} alt="user" />
+                <img
+                  src={item?.image || User}
+                  alt="user"
+                  onClick={handleImageClick}
+                  style={{ cursor: "pointer" }}
+                />
               </div>
               <div className="user__form__right">
                 <div className="user__form__right-top">

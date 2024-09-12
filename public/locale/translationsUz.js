@@ -47,6 +47,7 @@ const translationsUz = {
 
   // couriersTable
   salary: "Maoshlar",
+  salar: "Maosh",
 
   // clientsTable
   customer: "Mijoz",

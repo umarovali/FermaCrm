@@ -86,6 +86,17 @@
               background: $white;
               padding-left: 10px;
             }
+
+            .couriers_look_bg {
+              width: 408px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              border-radius: 12px;
+              border: 1px solid $border;
+              background: $white;
+              padding-left: 10px;
+            }
           }
         }
       }

@@ -6,7 +6,6 @@ import axios from "axios";
 import CouriersItem from "./CouriersItem";
 import Loading from "../../../assets/images/loading.svg";
 
-
 export default function CouriersTable() {
   const { t } = useTranslation();
   const [couriers, setCouriers] = useState([]);
@@ -25,6 +24,20 @@ export default function CouriersTable() {
         setLoading(false);
       });
   }, []);
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://api.bbk.kg/admin/couriers/${id}`)
+      .then(() => {
+        setCouriers((prevCouriers) =>
+          prevCouriers.filter((courier) => courier.id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting courier:", error);
+        alert(t("deleteError"));
+      });
+  };
 
   if (loading)
     return (
@@ -66,10 +79,12 @@ export default function CouriersTable() {
               <tbody>
                 {couriers.map((item, index) => (
                   <CouriersItem
+                    index={index + 1}
                     key={item.id}
-                    id={index + 1}
+                    id={item.id}
                     name={item.user.full_name}
                     tel={item.user.phone_number}
+                    onDelete={handleDelete}
                     salary={item.salary || "N/A"}
                   />
                 ))}

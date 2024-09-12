@@ -10,7 +10,7 @@ export default function UsersPage() {
     <Routes>
       <Route path="/" element={<User />} />
       <Route path="/user_add" element={<UserAdd />} />
-      <Route path="/user_edit" element={<UsersEdit />} />
+      <Route path="/user_edit/:id" element={<UsersEdit />} />
       <Route path="/user_look/:id" element={<UserLook />} />
     </Routes>
   );

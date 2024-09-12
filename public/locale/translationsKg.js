@@ -48,6 +48,7 @@ const translationsKg = {
 
   // couriersTable
   salary: "Эмгек акылар",
+  salar: "Эмгек акы",
 
   // clientsTable
   customer: "Кардар",
